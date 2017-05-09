@@ -99,24 +99,24 @@ public class mainPanel extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jTextInRepairMCost = new javax.swing.JTextField();
         jTextInRepairRCost = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        jTextInRepairman = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jPanelInStores = new javax.swing.JPanel();
         jButtonStoreAdd = new javax.swing.JButton();
         jButtonStoreClear = new javax.swing.JButton();
-        jTextStoreName = new javax.swing.JTextField();
-        jTextStoreAddress = new javax.swing.JTextField();
-        jTextStorePhone = new javax.swing.JTextField();
+        jTextInStoreName = new javax.swing.JTextField();
+        jTextInStoreAddress = new javax.swing.JTextField();
+        jTextInStorePhone = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jPanelInRepairCompany = new javax.swing.JPanel();
         jButtonRCAdd = new javax.swing.JButton();
         jButtonRCClear = new javax.swing.JButton();
-        jTextRCName = new javax.swing.JTextField();
-        jTextRCPhone = new javax.swing.JTextField();
+        jTextInRCName = new javax.swing.JTextField();
+        jTextInRCPhone = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jPanelInProperty = new javax.swing.JPanel();
@@ -187,9 +187,9 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonOutPropLoad = new javax.swing.JButton();
         jLabel34 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTAOutPropInfo = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        jTAOutPropRepair = new javax.swing.JTextArea();
         jPanelOutRepair = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         jCBOutRepair = new javax.swing.JComboBox<>();
@@ -222,6 +222,11 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonOwnerClear.setMaximumSize(new java.awt.Dimension(70, 29));
         jButtonOwnerClear.setMinimumSize(new java.awt.Dimension(70, 29));
         jButtonOwnerClear.setPreferredSize(null);
+        jButtonOwnerClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOwnerClearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelInOwnerLayout = new javax.swing.GroupLayout(jPanelInOwner);
         jPanelInOwner.setLayout(jPanelInOwnerLayout);
@@ -259,7 +264,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(0, 0, 0)
                 .addComponent(jTextInOwnerPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
                 .addGroup(jPanelInOwnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonOwnerClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonOwnerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -344,6 +349,11 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonPayClear.setMaximumSize(new java.awt.Dimension(70, 29));
         jButtonPayClear.setMinimumSize(new java.awt.Dimension(70, 29));
         jButtonPayClear.setPreferredSize(null);
+        jButtonPayClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPayClearActionPerformed(evt);
+            }
+        });
 
         jCBInPayTenant.setModel(new javax.swing.DefaultComboBoxModel(tenantCB));
 
@@ -427,7 +437,7 @@ public class mainPanel extends javax.swing.JFrame {
                     .addComponent(jTextInPayOwner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBInPayOM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBInPayOY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, Short.MAX_VALUE)
                 .addGroup(jPanelInPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonPayClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonPayAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -450,6 +460,11 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonRepairClear.setMaximumSize(new java.awt.Dimension(70, 29));
         jButtonRepairClear.setMinimumSize(new java.awt.Dimension(70, 29));
         jButtonRepairClear.setPreferredSize(null);
+        jButtonRepairClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRepairClearActionPerformed(evt);
+            }
+        });
 
         jCBInRepairProperty.setModel(new javax.swing.DefaultComboBoxModel(propertyCB));
 
@@ -504,7 +519,7 @@ public class mainPanel extends javax.swing.JFrame {
                                     .addComponent(jCBInRepairRC, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabelRC)
                                     .addComponent(jLabel37)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextInRepairman, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(155, 155, 155)
                                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel35)
@@ -539,18 +554,18 @@ public class mainPanel extends javax.swing.JFrame {
                     .addComponent(jCBInRepairRC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBInRepairStore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
-                .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37))
-                .addGap(0, 0, 0)
-                .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextInRepairMCost, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextInRepairMCost)
+                    .addComponent(jTextInRepairman))
                 .addGap(26, 26, 26)
                 .addComponent(jLabel38)
                 .addGap(1, 1, 1)
                 .addComponent(jTextInRepairRCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRepairClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRepairAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -573,6 +588,11 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonStoreClear.setMaximumSize(new java.awt.Dimension(70, 29));
         jButtonStoreClear.setMinimumSize(new java.awt.Dimension(70, 29));
         jButtonStoreClear.setPreferredSize(null);
+        jButtonStoreClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonStoreClearActionPerformed(evt);
+            }
+        });
 
         jLabel29.setText("Store Name");
 
@@ -589,7 +609,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addGroup(jPanelInStoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelInStoresLayout.createSequentialGroup()
                         .addGroup(jPanelInStoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextStoreAddress, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextInStoreAddress, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelInStoresLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
                                 .addComponent(jButtonStoreAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -598,8 +618,8 @@ public class mainPanel extends javax.swing.JFrame {
                         .addGap(238, 238, 238))
                     .addGroup(jPanelInStoresLayout.createSequentialGroup()
                         .addGroup(jPanelInStoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextStoreName, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextStorePhone, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextInStoreName, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextInStorePhone, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelInStoresLayout.createSequentialGroup()
                         .addGroup(jPanelInStoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -614,16 +634,16 @@ public class mainPanel extends javax.swing.JFrame {
                 .addGap(58, 58, 58)
                 .addComponent(jLabel29)
                 .addGap(1, 1, 1)
-                .addComponent(jTextStoreName, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addComponent(jTextInStoreName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel30)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextStoreAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addComponent(jTextInStoreAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel31)
                 .addGap(1, 1, 1)
-                .addComponent(jTextStorePhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
+                .addComponent(jTextInStorePhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
                 .addGroup(jPanelInStoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonStoreClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonStoreAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -664,8 +684,8 @@ public class mainPanel extends javax.swing.JFrame {
             .addGroup(jPanelInRepairCompanyLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelInRepairCompanyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextRCName, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextRCPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextInRCName, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextInRCPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27)
                     .addComponent(jLabel28))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -676,12 +696,12 @@ public class mainPanel extends javax.swing.JFrame {
                 .addGap(59, 59, 59)
                 .addComponent(jLabel27)
                 .addGap(1, 1, 1)
-                .addComponent(jTextRCName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextInRCName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addComponent(jLabel28)
                 .addGap(0, 0, 0)
-                .addComponent(jTextRCPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
+                .addComponent(jTextInRCPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 327, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairCompanyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRCClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRCAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -995,7 +1015,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel22)
                 .addGap(0, 0, 0)
                 .addComponent(jCBInTenantDependents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
                 .addGroup(jPanelInTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonTenantClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonTenantAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1075,16 +1095,21 @@ public class mainPanel extends javax.swing.JFrame {
         jCBOutProp.setModel(new javax.swing.DefaultComboBoxModel(propertyCB));
 
         jButtonOutPropLoad.setText("Load");
+        jButtonOutPropLoad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOutPropLoadActionPerformed(evt);
+            }
+        });
 
         jLabel34.setText("Select Property");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
+        jTAOutPropInfo.setColumns(20);
+        jTAOutPropInfo.setRows(5);
+        jScrollPane3.setViewportView(jTAOutPropInfo);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane6.setViewportView(jTextArea4);
+        jTAOutPropRepair.setColumns(20);
+        jTAOutPropRepair.setRows(5);
+        jScrollPane6.setViewportView(jTAOutPropRepair);
 
         javax.swing.GroupLayout jPanelOutPropLayout = new javax.swing.GroupLayout(jPanelOutProp);
         jPanelOutProp.setLayout(jPanelOutPropLayout);
@@ -1186,14 +1211,38 @@ public class mainPanel extends javax.swing.JFrame {
 
     private void jButtonPropAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPropAddActionPerformed
         // TODO add your handling code here:
+        String propName = jTextInPropertyAddress.getText();
+        String propCity = jTextInPropertyCity.getText();
+        String propZip = jTextInPropertyZip.getText();
+        String OwnerName = jCBInPropertyOwner.getSelectedItem().toString();
+        int size = Integer.parseInt(jTextInPropertySize.getText().toString());
+        int year = jCBInPropertyYear.getSelectedIndex() + 1917;
+        String county = jCBInPropertyCounty.getSelectedItem().toString();
+        int bedNum = jCBInPropertyBed.getSelectedIndex();
+        int bathNum = jCBInPropertyBath.getSelectedIndex();
+        
     }//GEN-LAST:event_jButtonPropAddActionPerformed
 
     private void jButtonStoreAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoreAddActionPerformed
         // TODO add your handling code here:
+        String storeName = jTextInStoreName.getText();
+        String storeAddress = jTextInStoreAddress.getText();
+        String storePhone = jTextInStorePhone.getText();
+        
+        jButtonStoreClearActionPerformed(null);
     }//GEN-LAST:event_jButtonStoreAddActionPerformed
 
     private void jButtonPayAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPayAddActionPerformed
         // TODO add your handling code here:
+        String propName = jCBInPayProperty.getSelectedItem().toString();
+        String tenantName = jCBInPayTenant.getSelectedItem().toString();
+        int tenantPay = Integer.parseInt(jTextInPayTenant.getText());
+        int ownerPay = Integer.parseInt(jTextInPayOwner.getText());
+        int tMonth = jCBInPayTM.getSelectedIndex()+1;
+        int oMonth = jCBInPayOM.getSelectedIndex()+1;
+        int tYear =  jCBInPayTY.getSelectedIndex()+2010;
+        int oYear =  jCBInPayOY.getSelectedIndex()+2010;
+        jButtonPayClearActionPerformed(null);
     }//GEN-LAST:event_jButtonPayAddActionPerformed
 
     private void jButtonTenantAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTenantAddActionPerformed
@@ -1220,6 +1269,8 @@ public class mainPanel extends javax.swing.JFrame {
         String ownerName = jTextInOwnerName.getText();
         String ownerPhone = jTextInOwnerPhoneNum.getText();
         String ownerEmail = jTextInOwnerEmail.getText();
+        
+        jButtonOwnerClearActionPerformed(null); 
     }//GEN-LAST:event_jButtonOwnerAddActionPerformed
 
     private void jCBInPropertyRSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBInPropertyRSActionPerformed
@@ -1240,12 +1291,10 @@ public class mainPanel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jCBInPropertyRSActionPerformed
 
-    private void jButtonRepairAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRepairAddActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonRepairAddActionPerformed
-
     private void jButtonRCAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRCAddActionPerformed
         // TODO add your handling code here:
+        String rCName = jTextInRCName.getText();
+        String rCPhone = jTextInRCPhone.getText();
     }//GEN-LAST:event_jButtonRCAddActionPerformed
 
     private void jCBInPropertyTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBInPropertyTypeActionPerformed
@@ -1274,7 +1323,65 @@ public class mainPanel extends javax.swing.JFrame {
     private void jButtonOutTenantLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutTenantLoadActionPerformed
         // TODO add your handling code here:
         String tenantName = jCBOutTenantName.getSelectedItem().toString();
+        String tenantInfo = "Info";
+        jTAOutTenantInfo.setText(tenantInfo);
+        String getTenantID = "Select tenantID from tenant where name = \"" +tenantName+"\"";
+        jTAOutTenantPay.setText(getTenantID);
     }//GEN-LAST:event_jButtonOutTenantLoadActionPerformed
+
+    private void jButtonOutPropLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutPropLoadActionPerformed
+        // TODO add your handling code here:
+        String propName = jCBOutProp.getSelectedItem().toString();
+        String propInfo = "Info";
+        jTAOutPropInfo.setText(propInfo);
+        String getRepairs = "Select repairID from repair where property = \"" +propName+"\"";
+        jTAOutPropRepair.setText(getRepairs);
+    }//GEN-LAST:event_jButtonOutPropLoadActionPerformed
+
+    private void jButtonRepairAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRepairAddActionPerformed
+        // TODO add your handling code here:
+        String propName = jCBInRepairProperty.getSelectedItem().toString();
+        int month = Integer.parseInt(jTextInRepairDateM.getText());
+        int day = Integer.parseInt(jTextInRepairDateD.getText());
+        int year = Integer.parseInt(jTextInRepairDateY.getText());
+        String repairCompany = jCBInRepairRC.getSelectedItem().toString();
+        String repairmanName = jTextInRepairman.getText();
+        String store = jCBInRepairStore.getSelectedItem().toString();
+        int rCost = Integer.parseInt(jTextInRepairRCost.getText());
+        int mCost = Integer.parseInt(jTextInRepairMCost.getText());
+        
+        jButtonRepairClearActionPerformed(null);
+    }//GEN-LAST:event_jButtonRepairAddActionPerformed
+
+    private void jButtonOwnerClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOwnerClearActionPerformed
+        // TODO add your handling code here:
+        jTextInOwnerName.setText(null);
+        jTextInOwnerPhoneNum.setText(null);
+        jTextInOwnerEmail.setText(null);
+    }//GEN-LAST:event_jButtonOwnerClearActionPerformed
+
+    private void jButtonPayClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPayClearActionPerformed
+        // TODO add your handling code here:
+        jTextInPayTenant.setText(null);
+        jTextInPayOwner.setText(null);
+    }//GEN-LAST:event_jButtonPayClearActionPerformed
+
+    private void jButtonRepairClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRepairClearActionPerformed
+        // TODO add your handling code here:
+        jTextInRepairDateM.setText(null);
+        jTextInRepairDateD.setText(null);
+        jTextInRepairDateY.setText(null);
+        jTextInRepairman.setText(null);
+        jTextInRepairRCost.setText(null);
+        jTextInRepairMCost.setText(null);
+    }//GEN-LAST:event_jButtonRepairClearActionPerformed
+
+    private void jButtonStoreClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoreClearActionPerformed
+        // TODO add your handling code here:
+        jTextInStoreName.setText(null);
+        jTextInStoreAddress.setText(null);
+        jTextInStorePhone.setText(null);
+    }//GEN-LAST:event_jButtonStoreClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1419,13 +1526,12 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTextArea jTAOutPropInfo;
+    private javax.swing.JTextArea jTAOutPropRepair;
     private javax.swing.JTextArea jTAOutTenantInfo;
     private javax.swing.JTextArea jTAOutTenantPay;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea4;
     private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextInOwnerEmail;
     private javax.swing.JTextField jTextInOwnerName;
     private javax.swing.JTextField jTextInOwnerPhoneNum;
@@ -1441,19 +1547,20 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JTextField jTextInPropertyVar5;
     private javax.swing.JTextField jTextInPropertyVar6;
     private javax.swing.JTextField jTextInPropertyZip;
+    private javax.swing.JTextField jTextInRCName;
+    private javax.swing.JTextField jTextInRCPhone;
     private javax.swing.JTextField jTextInRepairDateD;
     private javax.swing.JTextField jTextInRepairDateM;
     private javax.swing.JTextField jTextInRepairDateY;
     private javax.swing.JTextField jTextInRepairMCost;
     private javax.swing.JTextField jTextInRepairRCost;
+    private javax.swing.JTextField jTextInRepairman;
+    private javax.swing.JTextField jTextInStoreAddress;
+    private javax.swing.JTextField jTextInStoreName;
+    private javax.swing.JTextField jTextInStorePhone;
     private javax.swing.JTextField jTextInTenantEmail;
     private javax.swing.JTextField jTextInTenantName;
     private javax.swing.JTextField jTextInTenantPhone;
-    private javax.swing.JTextField jTextRCName;
-    private javax.swing.JTextField jTextRCPhone;
-    private javax.swing.JTextField jTextStoreAddress;
-    private javax.swing.JTextField jTextStoreName;
-    private javax.swing.JTextField jTextStorePhone;
     private javax.swing.JLabel propertyVar1;
     private javax.swing.JLabel propertyVar2;
     private javax.swing.JLabel propertyVar3;

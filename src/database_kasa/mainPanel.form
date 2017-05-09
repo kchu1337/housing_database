@@ -113,7 +113,7 @@
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="jTextInOwnerPhoneNum" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="244" max="32767" attributes="0"/>
+                              <EmptySpace pref="290" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonOwnerClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonOwnerAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -175,6 +175,9 @@
                           <Dimension value="null"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOwnerClearActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -377,7 +380,7 @@
                                   <Component id="jCBInPayOM" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jCBInPayOY" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="202" max="32767" attributes="0"/>
+                              <EmptySpace pref="248" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonPayClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonPayAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -418,6 +421,9 @@
                           <Dimension value="null"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPayClearActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="jCBInPayTenant">
                       <Properties>
@@ -595,7 +601,7 @@
                                                   <Component id="jCBInRepairRC" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                                                   <Component id="jLabelRC" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jTextField1" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                                  <Component id="jTextInRepairman" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
@@ -642,20 +648,20 @@
                                   <Component id="jCBInRepairStore" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel36" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextInRepairMCost" min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="jLabel36" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jTextInRepairMCost" max="32767" attributes="0"/>
+                                  <Component id="jTextInRepairman" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Component id="jTextInRepairRCost" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="127" max="32767" attributes="0"/>
+                              <EmptySpace pref="178" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonRepairClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonRepairAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -696,6 +702,9 @@
                           <Dimension value="null"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRepairClearActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="jCBInRepairProperty">
                       <Properties>
@@ -757,7 +766,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextInRepairRCost">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField1">
+                    <Component class="javax.swing.JTextField" name="jTextInRepairman">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel36">
                       <Properties>
@@ -793,7 +802,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jTextStoreAddress" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextInStoreAddress" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace pref="229" max="32767" attributes="0"/>
                                               <Component id="jButtonStoreAdd" min="-2" pref="70" max="-2" attributes="0"/>
@@ -805,8 +814,8 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTextStoreName" min="-2" pref="181" max="-2" attributes="0"/>
-                                          <Component id="jTextStorePhone" min="-2" pref="174" max="-2" attributes="0"/>
+                                          <Component id="jTextInStoreName" min="-2" pref="181" max="-2" attributes="0"/>
+                                          <Component id="jTextInStorePhone" min="-2" pref="174" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
                                   </Group>
@@ -828,16 +837,16 @@
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Component id="jTextStoreName" min="-2" pref="26" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="jTextInStoreName" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextStoreAddress" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="jTextInStoreAddress" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                               <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Component id="jTextStorePhone" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="188" max="32767" attributes="0"/>
+                              <Component id="jTextInStorePhone" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="273" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonStoreClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonStoreAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -878,12 +887,15 @@
                           <Dimension value="null"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonStoreClearActionPerformed"/>
+                      </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextStoreName">
+                    <Component class="javax.swing.JTextField" name="jTextInStoreName">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextStoreAddress">
+                    <Component class="javax.swing.JTextField" name="jTextInStoreAddress">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextStorePhone">
+                    <Component class="javax.swing.JTextField" name="jTextInStorePhone">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel29">
                       <Properties>
@@ -924,8 +936,8 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextRCName" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="jTextRCPhone" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="jTextInRCName" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="jTextInRCPhone" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                                   <Component id="jLabel27" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -939,12 +951,12 @@
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Component id="jTextRCName" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextInRCName" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                               <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                              <Component id="jTextRCPhone" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="281" max="32767" attributes="0"/>
+                              <Component id="jTextInRCPhone" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="327" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonRCClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonRCAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -986,9 +998,9 @@
                         </Property>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextRCName">
+                    <Component class="javax.swing.JTextField" name="jTextInRCName">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextRCPhone">
+                    <Component class="javax.swing.JTextField" name="jTextInRCPhone">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel27">
                       <Properties>
@@ -1603,7 +1615,7 @@
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Component id="jCBInTenantDependents" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="187" max="32767" attributes="0"/>
+                              <EmptySpace pref="233" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonTenantClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonTenantAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1918,6 +1930,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Load"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOutPropLoadActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel34">
                       <Properties>
@@ -1931,7 +1946,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea1">
+                        <Component class="javax.swing.JTextArea" name="jTAOutPropInfo">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
@@ -1946,7 +1961,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea4">
+                        <Component class="javax.swing.JTextArea" name="jTAOutPropRepair">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
