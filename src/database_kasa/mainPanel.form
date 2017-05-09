@@ -113,7 +113,7 @@
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="jTextInOwnerPhoneNum" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="231" max="32767" attributes="0"/>
+                              <EmptySpace pref="244" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonOwnerClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonOwnerAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -200,8 +200,8 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jInDropOGGroup" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="jInDropOGOwner" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="jCBInOGGroup" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Component id="jCBInOGOwner" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel5" alignment="0" min="-2" pref="93" max="-2" attributes="0"/>
                               </Group>
@@ -215,11 +215,11 @@
                               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="jInDropOGOwner" min="-2" max="-2" attributes="0"/>
+                              <Component id="jCBInOGOwner" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="jInDropOGGroup" min="-2" max="-2" attributes="0"/>
+                              <Component id="jCBInOGGroup" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="300" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonClear" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -262,7 +262,7 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOGAddActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="jInDropOGOwner">
+                    <Component class="javax.swing.JComboBox" name="jCBInOGOwner">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new javax.swing.DefaultComboBoxModel(ownerCB)" type="code"/>
@@ -272,7 +272,7 @@
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="jInDropOGGroup">
+                    <Component class="javax.swing.JComboBox" name="jCBInOGGroup">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new javax.swing.DefaultComboBoxModel(ownerCB)" type="code"/>
@@ -311,10 +311,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jCBInPayTenant" min="-2" pref="200" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="jCBInPayTenant" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
                                           <Component id="jCBInPayProperty" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace min="0" pref="229" max="32767" attributes="0"/>
@@ -333,10 +330,8 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel25" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="jTextInPayOwner" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabel26" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
+                                          <Component id="jTextInPayOwner" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jLabel26" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jTextInPayTenant" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -382,7 +377,7 @@
                                   <Component id="jCBInPayOM" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jCBInPayOY" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="177" max="32767" attributes="0"/>
+                              <EmptySpace pref="202" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonPayClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonPayAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -660,7 +655,7 @@
                               <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Component id="jTextInRepairRCost" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="94" max="32767" attributes="0"/>
+                              <EmptySpace pref="127" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonRepairClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonRepairAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -842,7 +837,7 @@
                               <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Component id="jTextStorePhone" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="178" max="32767" attributes="0"/>
+                              <EmptySpace pref="188" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonStoreClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonStoreAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -949,7 +944,7 @@
                               <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Component id="jTextRCPhone" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="280" max="32767" attributes="0"/>
+                              <EmptySpace pref="281" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonRCClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonRCAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1120,40 +1115,32 @@
                                           <Component id="propertyVar1" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="propertyVar2" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="propertyVar3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="jTextInPropertyVar3" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextInPropertyVar2" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextInPropertyVar1" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jCBInPropertyType" alignment="0" max="32767" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jCBInPropertyBed" min="-2" pref="50" max="-2" attributes="0"/>
-                                                          <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jCBInPropertyBath" min="-2" pref="50" max="-2" attributes="0"/>
-                                                      </Group>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jTextInPropertyVar3" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jTextInPropertyVar2" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jTextInPropertyVar1" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jCBInPropertyType" alignment="0" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jCBInPropertyBed" min="-2" pref="50" max="-2" attributes="0"/>
+                                                      <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jCBInPropertyBath" min="-2" pref="50" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                              <Component id="jButtonPropType" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="propertyVar4" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="propertyVar5" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="propertyVar6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="jTextInPropertyVar6" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextInPropertyVar5" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jTextInPropertyVar4" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="jCBInPropertyRS" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                              <Component id="jButtonPropRS" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="jTextInPropertyVar6" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jTextInPropertyVar5" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jTextInPropertyVar4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jCBInPropertyRS" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace pref="245" max="32767" attributes="0"/>
@@ -1203,12 +1190,9 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jCBInPropertyType" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButtonPropType" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                      <Component id="jCBInPropertyType" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                                       <Component id="propertyVar1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                       <Component id="jTextInPropertyVar1" min="-2" max="-2" attributes="0"/>
@@ -1223,11 +1207,8 @@
                                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                                       <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jCBInPropertyRS" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButtonPropRS" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="jCBInPropertyRS" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="propertyVar4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                       <Component id="jTextInPropertyVar4" min="-2" max="-2" attributes="0"/>
@@ -1239,7 +1220,7 @@
                                       <Component id="propertyVar6" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                       <Component id="jTextInPropertyVar6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="153" max="32767" attributes="0"/>
+                                      <EmptySpace pref="224" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -1256,9 +1237,6 @@
                                   <Connection code="new javax.swing.DefaultComboBoxModel(ownerCB)" type="code"/>
                                 </Property>
                               </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBInPropertyOwnerActionPerformed"/>
-                              </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                               </AuxValues>
@@ -1378,9 +1356,6 @@
                                   </StringArray>
                                 </Property>
                               </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBInPropertyYearActionPerformed"/>
-                              </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                               </AuxValues>
@@ -1442,9 +1417,6 @@
                                   </StringArray>
                                 </Property>
                               </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBInPropertyBedActionPerformed"/>
-                              </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                               </AuxValues>
@@ -1464,9 +1436,6 @@
                                   </StringArray>
                                 </Property>
                               </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBInPropertyBathActionPerformed"/>
-                              </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                               </AuxValues>
@@ -1491,6 +1460,9 @@
                                   </StringArray>
                                 </Property>
                               </Properties>
+                              <Events>
+                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCBInPropertyTypeActionPerformed"/>
+                              </Events>
                               <AuxValues>
                                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                               </AuxValues>
@@ -1508,26 +1480,12 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="propertyVar1">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="Click Update"/>
+                                <Property name="text" type="java.lang.String" value="Choose a Property Type"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="propertyVar2">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Click Update"/>
-                              </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="propertyVar3">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Click Update"/>
-                              </Properties>
-                            </Component>
-                            <Component class="javax.swing.JButton" name="jButtonPropType">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Update"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPropTypeActionPerformed"/>
-                              </Events>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel18">
                               <Properties>
@@ -1553,37 +1511,20 @@
                                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                               </AuxValues>
                             </Component>
-                            <Component class="javax.swing.JButton" name="jButtonPropRS">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Update"/>
-                              </Properties>
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPropRSActionPerformed"/>
-                              </Events>
-                            </Component>
                             <Component class="javax.swing.JLabel" name="propertyVar4">
                               <Properties>
-                                <Property name="text" type="java.lang.String" value="Click Update"/>
+                                <Property name="text" type="java.lang.String" value="Choose Rental or Sale"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="jTextInPropertyVar4">
                             </Component>
                             <Component class="javax.swing.JLabel" name="propertyVar5">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Click Update"/>
-                              </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="jTextInPropertyVar5">
                             </Component>
                             <Component class="javax.swing.JLabel" name="propertyVar6">
-                              <Properties>
-                                <Property name="text" type="java.lang.String" value="Click Update"/>
-                              </Properties>
                             </Component>
                             <Component class="javax.swing.JTextField" name="jTextInPropertyVar6">
-                              <Events>
-                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextInPropertyVar6ActionPerformed"/>
-                              </Events>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -1613,13 +1554,13 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jInCBTenantDependents" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jCBInTenantDependents" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTextInTenantPhone" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jTextInTenantEmail" alignment="0" pref="146" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextInTenantPhone" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabeTlPN" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1629,7 +1570,7 @@
                                       <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
-                                          <Component id="JCBInTenantProperty" min="-2" pref="309" max="-2" attributes="0"/>
+                                          <Component id="jCBInTenantProperty" min="-2" pref="309" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -1648,21 +1589,21 @@
                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jTextInTenantName" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JCBInTenantProperty" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jCBInTenantProperty" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Component id="jTextInTenantEmail" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="jTextInTenantPhone" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabeTlPN" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                              <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jTextInTenantPhone" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                              <Component id="jInCBTenantDependents" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="162" max="32767" attributes="0"/>
+                              <Component id="jCBInTenantDependents" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="187" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonTenantClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonTenantAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1708,9 +1649,9 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="jTextInTenantEmail">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextField3">
+                    <Component class="javax.swing.JTextField" name="jTextInTenantPhone">
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="JCBInTenantProperty">
+                    <Component class="javax.swing.JComboBox" name="jCBInTenantProperty">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new javax.swing.DefaultComboBoxModel(propertyCB)" type="code"/>
@@ -1720,7 +1661,7 @@
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JComboBox" name="jInCBTenantDependents">
+                    <Component class="javax.swing.JComboBox" name="jCBInTenantDependents">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                           <StringArray count="9">
@@ -1736,9 +1677,6 @@
                           </StringArray>
                         </Property>
                       </Properties>
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jInCBTenantDependentsActionPerformed"/>
-                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
@@ -1753,7 +1691,7 @@
                         <Property name="text" type="java.lang.String" value="Email"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jTextInTenantPhone">
+                    <Component class="javax.swing.JLabel" name="jLabeTlPN">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Phone Number"/>
                       </Properties>
@@ -1818,7 +1756,7 @@
                                   <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jComboBox2" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
+                                          <Component id="jCBOutTenantName" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
                                           <Component id="jScrollPane4" alignment="0" min="-2" pref="299" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
@@ -1839,7 +1777,7 @@
                               <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jCBOutTenantName" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonOutTenantLoad" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
@@ -1853,7 +1791,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JComboBox" name="jComboBox2">
+                    <Component class="javax.swing.JComboBox" name="jCBOutTenantName">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="new javax.swing.DefaultComboBoxModel(tenantCB)" type="code"/>
@@ -1872,6 +1810,9 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Load"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOutTenantLoadActionPerformed"/>
+                      </Events>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane4">
                       <AuxValues>
@@ -1880,7 +1821,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea2">
+                        <Component class="javax.swing.JTextArea" name="jTAOutTenantInfo">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
@@ -1895,7 +1836,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea3">
+                        <Component class="javax.swing.JTextArea" name="jTAOutTenantPay">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
