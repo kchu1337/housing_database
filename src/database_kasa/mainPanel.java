@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package database_kasa;
+import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.UIManager;
 
 /**
  *
@@ -16,9 +18,26 @@ public class mainPanel extends javax.swing.JFrame {
     /**
      * Creates new form mainPanel
      */
+    @SuppressWarnings("empty-statement")
     public mainPanel() {
-        initComponents();
-       
+        UIManager.getLookAndFeelDefaults().put("defaultFont", new Font("Arial", Font.PLAIN, 16));
+        String tenantSQL = "select name from tenant";
+        String propertySQL = "select address from property";
+        String ownerSQL = "select name from owner";
+        String repairSQL = "select date, address from repairs";
+        String repairCompanySQL = "select name from repairCompany";
+        String storeSQL = "select name, address from store";
+        
+        tenantCB= new String[]{"Alice"};
+        propertyCB = new String[]{"222 road"};
+        ownerCB = new String[]{"Bob"};
+        repairCB = new String[]{"05/12/13 2Road"};
+        repairCompanyCB  = new String[]{"Repair Co"};
+        storeCB = new String[]{"Home Depot, 123 street"};
+        countyCB = new String[]{"Montgomery", "Prince Georges"};
+        initComponents(); 
+         
+        
     }
 
     /**
@@ -74,9 +93,9 @@ public class mainPanel extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jTextInRepairDateD = new javax.swing.JTextField();
         jTextInRepairDateY = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jCBInRepairRC = new javax.swing.JComboBox<>();
         jCBInRepairStore = new javax.swing.JComboBox<>();
-        jCBInRepairRC = new javax.swing.JLabel();
+        jLabelRC = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jTextInRepairMCost = new javax.swing.JTextField();
         jTextInRepairRCost = new javax.swing.JTextField();
@@ -156,6 +175,29 @@ public class mainPanel extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanelOutTenant = new javax.swing.JPanel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel39 = new javax.swing.JLabel();
+        jButtonOutTenantLoad = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jPanelOutProp = new javax.swing.JPanel();
+        jCBOutProp = new javax.swing.JComboBox<>();
+        jButtonOutPropLoad = new javax.swing.JButton();
+        jLabel34 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jPanelOutRepair = new javax.swing.JPanel();
+        jLabel40 = new javax.swing.JLabel();
+        jCBOutRepair = new javax.swing.JComboBox<>();
+        jButtonOutRepair = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
 
         jLabel7.setText("jLabel7");
 
@@ -218,7 +260,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(0, 0, 0)
                 .addComponent(jTextInOwnerPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
                 .addGroup(jPanelInOwnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonOwnerClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonOwnerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -242,9 +284,9 @@ public class mainPanel extends javax.swing.JFrame {
             }
         });
 
-        jInDropOGOwner.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jInDropOGOwner.setModel(new javax.swing.DefaultComboBoxModel(ownerCB));
 
-        jInDropOGGroup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jInDropOGGroup.setModel(new javax.swing.DefaultComboBoxModel(ownerCB));
 
         jLabel4.setText("Add owner");
 
@@ -255,7 +297,7 @@ public class mainPanel extends javax.swing.JFrame {
         jPanelInOwnerGroupLayout.setHorizontalGroup(
             jPanelInOwnerGroupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInOwnerGroupLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(244, Short.MAX_VALUE)
                 .addComponent(jButtonOGAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -267,7 +309,7 @@ public class mainPanel extends javax.swing.JFrame {
                     .addComponent(jInDropOGOwner, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelInOwnerGroupLayout.setVerticalGroup(
             jPanelInOwnerGroupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,9 +346,9 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonPayClear.setMinimumSize(new java.awt.Dimension(70, 29));
         jButtonPayClear.setPreferredSize(null);
 
-        jCBInPayTenant.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBInPayTenant.setModel(new javax.swing.DefaultComboBoxModel(tenantCB));
 
-        jCBInPayProperty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBInPayProperty.setModel(new javax.swing.DefaultComboBoxModel(propertyCB));
 
         jLabel21.setText("Tenant");
 
@@ -389,7 +431,7 @@ public class mainPanel extends javax.swing.JFrame {
                     .addComponent(jTextInPayOwner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBInPayOM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBInPayOY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
                 .addGroup(jPanelInPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonPayClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonPayAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -413,17 +455,17 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonRepairClear.setMinimumSize(new java.awt.Dimension(70, 29));
         jButtonRepairClear.setPreferredSize(null);
 
-        jCBInRepairProperty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBInRepairProperty.setModel(new javax.swing.DefaultComboBoxModel(propertyCB));
 
         jLabel32.setText("Property");
 
         jLabel33.setText("Repair Date(MM DD YYYY)");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBInRepairRC.setModel(new javax.swing.DefaultComboBoxModel(repairCompanyCB));
 
-        jCBInRepairStore.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBInRepairStore.setModel(new javax.swing.DefaultComboBoxModel(storeCB));
 
-        jCBInRepairRC.setText("Repair Company");
+        jLabelRC.setText("Repair Company");
 
         jLabel35.setText("Material Source");
 
@@ -463,8 +505,8 @@ public class mainPanel extends javax.swing.JFrame {
                                 .addComponent(jTextInRepairDateY, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelInRepairLayout.createSequentialGroup()
                                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jCBInRepairRC)
+                                    .addComponent(jCBInRepairRC, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelRC)
                                     .addComponent(jLabel37)
                                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(155, 155, 155)
@@ -494,11 +536,11 @@ public class mainPanel extends javax.swing.JFrame {
                     .addComponent(jTextInRepairDateY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCBInRepairRC)
+                    .addComponent(jLabelRC)
                     .addComponent(jLabel35))
                 .addGap(0, 0, 0)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCBInRepairRC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBInRepairStore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -512,7 +554,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel38)
                 .addGap(1, 1, 1)
                 .addComponent(jTextInRepairRCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRepairClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRepairAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -585,7 +627,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel31)
                 .addGap(1, 1, 1)
                 .addComponent(jTextStorePhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
                 .addGroup(jPanelInStoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonStoreClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonStoreAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -643,7 +685,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel28)
                 .addGap(0, 0, 0)
                 .addComponent(jTextRCPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairCompanyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRCClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRCAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -673,7 +715,7 @@ public class mainPanel extends javax.swing.JFrame {
 
         jLabel8.setText("Address");
 
-        jCBInPropertyOwner.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBInPropertyOwner.setModel(new javax.swing.DefaultComboBoxModel(ownerCB));
         jCBInPropertyOwner.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCBInPropertyOwnerActionPerformed(evt);
@@ -693,17 +735,11 @@ public class mainPanel extends javax.swing.JFrame {
 
         jLabel11.setText("Year Built");
 
-        jTextInPropertyZip.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextInPropertyZipActionPerformed(evt);
-            }
-        });
-
         jLabel12.setText("City");
 
         jLabel13.setText("Zip");
 
-        jCBInPropertyCounty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBInPropertyCounty.setModel(new javax.swing.DefaultComboBoxModel(countyCB));
 
         jLabel14.setText("County");
 
@@ -728,12 +764,6 @@ public class mainPanel extends javax.swing.JFrame {
         jCBInPropertyType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Condo", "Townhouse", "Single Family" }));
 
         jLabel17.setText("Property Type");
-
-        jTextInPropertyVar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextInPropertyVar3ActionPerformed(evt);
-            }
-        });
 
         propertyVar1.setText("Click Update");
 
@@ -955,7 +985,7 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonTenantClear.setMinimumSize(new java.awt.Dimension(70, 29));
         jButtonTenantClear.setPreferredSize(null);
 
-        JCBInTenantProperty.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        JCBInTenantProperty.setModel(new javax.swing.DefaultComboBoxModel(propertyCB));
 
         jInCBTenantDependents.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8+" }));
         jInCBTenantDependents.addActionListener(new java.awt.event.ActionListener() {
@@ -1027,7 +1057,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel22)
                 .addGap(0, 0, 0)
                 .addComponent(jInCBTenantDependents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addGroup(jPanelInTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonTenantClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonTenantAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1049,15 +1079,159 @@ public class mainPanel extends javax.swing.JFrame {
 
         jPanelMain.addTab("Insert Data", jPanel1);
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(tenantCB));
+
+        jLabel39.setText("Select Tenant");
+
+        jButtonOutTenantLoad.setText("Load");
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane4.setViewportView(jTextArea2);
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane5.setViewportView(jTextArea3);
+
+        javax.swing.GroupLayout jPanelOutTenantLayout = new javax.swing.GroupLayout(jPanelOutTenant);
+        jPanelOutTenant.setLayout(jPanelOutTenantLayout);
+        jPanelOutTenantLayout.setHorizontalGroup(
+            jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOutTenantLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel39)
+                    .addGroup(jPanelOutTenantLayout.createSequentialGroup()
+                        .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(75, 75, 75)
+                        .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButtonOutTenantLoad)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(82, Short.MAX_VALUE))
+        );
+        jPanelOutTenantLayout.setVerticalGroup(
+            jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOutTenantLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel39)
+                .addGap(0, 0, 0)
+                .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonOutTenantLoad))
+                .addGap(65, 65, 65)
+                .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4))
+                .addGap(36, 36, 36))
+        );
+
+        jTabbedPane1.addTab("Tenant Info", jPanelOutTenant);
+
+        jCBOutProp.setModel(new javax.swing.DefaultComboBoxModel(propertyCB));
+
+        jButtonOutPropLoad.setText("Load");
+
+        jLabel34.setText("Select Property");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane3.setViewportView(jTextArea1);
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane6.setViewportView(jTextArea4);
+
+        javax.swing.GroupLayout jPanelOutPropLayout = new javax.swing.GroupLayout(jPanelOutProp);
+        jPanelOutProp.setLayout(jPanelOutPropLayout);
+        jPanelOutPropLayout.setHorizontalGroup(
+            jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOutPropLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel34)
+                    .addGroup(jPanelOutPropLayout.createSequentialGroup()
+                        .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+                            .addComponent(jCBOutProp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelOutPropLayout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addComponent(jButtonOutPropLoad))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelOutPropLayout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+        jPanelOutPropLayout.setVerticalGroup(
+            jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOutPropLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel34)
+                .addGap(0, 0, 0)
+                .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCBOutProp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonOutPropLoad))
+                .addGap(65, 65, 65)
+                .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Property Info", jPanelOutProp);
+
+        jLabel40.setText("Select Repair Record");
+
+        jCBOutRepair.setModel(new javax.swing.DefaultComboBoxModel(repairCB));
+
+        jButtonOutRepair.setText("Load");
+
+        jTextArea5.setColumns(20);
+        jTextArea5.setRows(5);
+        jScrollPane7.setViewportView(jTextArea5);
+
+        javax.swing.GroupLayout jPanelOutRepairLayout = new javax.swing.GroupLayout(jPanelOutRepair);
+        jPanelOutRepair.setLayout(jPanelOutRepairLayout);
+        jPanelOutRepairLayout.setHorizontalGroup(
+            jPanelOutRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOutRepairLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelOutRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelOutRepairLayout.createSequentialGroup()
+                        .addComponent(jCBOutRepair, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(jButtonOutRepair))
+                    .addComponent(jLabel40))
+                .addContainerGap(141, Short.MAX_VALUE))
+        );
+        jPanelOutRepairLayout.setVerticalGroup(
+            jPanelOutRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelOutRepairLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel40)
+                .addGap(0, 0, 0)
+                .addGroup(jPanelOutRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCBOutRepair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonOutRepair))
+                .addGap(65, 65, 65)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(190, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Repair Info", jPanelOutRepair);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 682, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 556, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jPanelMain.addTab("Read Data", jPanel2);
@@ -1107,16 +1281,11 @@ public class mainPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonOwnerAddActionPerformed
 
-    private void jTextInPropertyVar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextInPropertyVar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextInPropertyVar3ActionPerformed
-
-    private void jTextInPropertyZipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextInPropertyZipActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextInPropertyZipActionPerformed
-
     private void jButtonPropTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPropTypeActionPerformed
        int type =  jCBInPropertyType.getSelectedIndex();
+       jTextInPropertyVar1.setText("");
+       jTextInPropertyVar2.setText("");
+       jTextInPropertyVar3.setText("");
        if (type == 0){ //condo
         propertyVar1.setText("Condo Number");
         propertyVar2.setText("NA");
@@ -1136,6 +1305,9 @@ public class mainPanel extends javax.swing.JFrame {
 
     private void jButtonPropRSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPropRSActionPerformed
        int type =  jCBInPropertyRS.getSelectedIndex();
+       jTextInPropertyVar4.setText("");
+       jTextInPropertyVar5.setText("");
+       jTextInPropertyVar6.setText("");
        if (type == 0){ //rental
         propertyVar4.setText("Price");
         propertyVar5.setText("Max Tenants");
@@ -1194,10 +1366,11 @@ public class mainPanel extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(mainPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new mainPanel().setVisible(true);
             }
         });
@@ -1207,6 +1380,9 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> JCBInTenantProperty;
     private javax.swing.JButton jButtonClear;
     private javax.swing.JButton jButtonOGAdd;
+    private javax.swing.JButton jButtonOutPropLoad;
+    private javax.swing.JButton jButtonOutRepair;
+    private javax.swing.JButton jButtonOutTenantLoad;
     private javax.swing.JButton jButtonOwnerAdd;
     private javax.swing.JButton jButtonOwnerClear;
     private javax.swing.JButton jButtonPayAdd;
@@ -1237,9 +1413,11 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jCBInPropertyType;
     private javax.swing.JComboBox<String> jCBInPropertyYear;
     private javax.swing.JComboBox<String> jCBInRepairProperty;
-    private javax.swing.JLabel jCBInRepairRC;
+    private javax.swing.JComboBox<String> jCBInRepairRC;
     private javax.swing.JComboBox<String> jCBInRepairStore;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jCBOutProp;
+    private javax.swing.JComboBox<String> jCBOutRepair;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jInCBTenantDependents;
     private javax.swing.JComboBox<String> jInDropOGGroup;
     private javax.swing.JComboBox<String> jInDropOGOwner;
@@ -1270,16 +1448,20 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelRC;
     private javax.swing.JTabbedPane jPaneInput;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -1293,8 +1475,22 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelInStores;
     private javax.swing.JPanel jPanelInTenant;
     private javax.swing.JTabbedPane jPanelMain;
+    private javax.swing.JPanel jPanelOutProp;
+    private javax.swing.JPanel jPanelOutRepair;
+    private javax.swing.JPanel jPanelOutTenant;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextInOwnerEmail;
@@ -1332,4 +1528,11 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JLabel propertyVar5;
     private javax.swing.JLabel propertyVar6;
     // End of variables declaration//GEN-END:variables
+    private String[] tenantCB;
+    private String[] propertyCB;
+    private String[] ownerCB;
+    private String[] repairCB;
+    private String[] repairCompanyCB;
+    private String[] storeCB;
+    private String[] countyCB;
 }
