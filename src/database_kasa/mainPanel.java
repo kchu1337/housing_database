@@ -172,6 +172,12 @@ public class mainPanel extends javax.swing.JFrame {
         jLabeTlPN = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        jCBInTenantDateMS = new javax.swing.JComboBox<>();
+        jCBInTenantDateYS = new javax.swing.JComboBox<>();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jCBInTenantDateME = new javax.swing.JComboBox<>();
+        jCBInTenantDateYE = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanelOutTenant = new javax.swing.JPanel();
@@ -195,12 +201,48 @@ public class mainPanel extends javax.swing.JFrame {
         jCBOutRepair = new javax.swing.JComboBox<>();
         jButtonOutRepair = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea5 = new javax.swing.JTextArea();
+        jTAOutRepair = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        jCBOutOwner = new javax.swing.JComboBox<>();
+        jLabel41 = new javax.swing.JLabel();
+        jButtonOutOwner = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTAOutOwnerInfo = new javax.swing.JTextArea();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTAOutOwnerPay = new javax.swing.JTextArea();
+        jPanel4 = new javax.swing.JPanel();
+        jCBOutPayM = new javax.swing.JComboBox<>();
+        jCBOutPayY = new javax.swing.JComboBox<>();
+        jLabel44 = new javax.swing.JLabel();
+        jButtonOutPay = new javax.swing.JButton();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTAOutPayPaid = new javax.swing.JTextArea();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jTAOutPayNP = new javax.swing.JTextArea();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jTextOutSearchSize = new javax.swing.JTextField();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jCBOutSearchYear = new javax.swing.JComboBox<>();
+        jLabel47 = new javax.swing.JLabel();
+        jCBOutSearchCounty = new javax.swing.JComboBox<>();
+        jLabel48 = new javax.swing.JLabel();
+        jCBOutSearchBed = new javax.swing.JComboBox<>();
+        jLabel49 = new javax.swing.JLabel();
+        jCBOutSearchBath = new javax.swing.JComboBox<>();
+        jLabel50 = new javax.swing.JLabel();
+        jCBOutSearchType = new javax.swing.JComboBox<>();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jTextSearchMaxRent = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        jButtonSearch = new javax.swing.JButton();
 
         jLabel7.setText("jLabel7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.BorderLayout());
 
         jLabel1.setText("Name");
 
@@ -264,7 +306,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(0, 0, 0)
                 .addComponent(jTextInOwnerPhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 287, Short.MAX_VALUE)
                 .addGroup(jPanelInOwnerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonOwnerClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonOwnerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -437,7 +479,7 @@ public class mainPanel extends javax.swing.JFrame {
                     .addComponent(jTextInPayOwner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBInPayOM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCBInPayOY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
                 .addGroup(jPanelInPaymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonPayClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonPayAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -565,7 +607,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel38)
                 .addGap(1, 1, 1)
                 .addComponent(jTextInRepairRCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 178, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRepairClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRepairAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -643,7 +685,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel31)
                 .addGap(1, 1, 1)
                 .addComponent(jTextInStorePhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
                 .addGroup(jPanelInStoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonStoreClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonStoreAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -701,7 +743,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel28)
                 .addGap(0, 0, 0)
                 .addComponent(jTextInRCPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 327, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 336, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairCompanyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRCClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRCAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -962,6 +1004,18 @@ public class mainPanel extends javax.swing.JFrame {
 
         jLabel23.setText("Property");
 
+        jCBInTenantDateMS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        jCBInTenantDateYS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017" }));
+
+        jLabel42.setText("Rent Start Date");
+
+        jLabel43.setText("Rent End Date");
+
+        jCBInTenantDateME.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        jCBInTenantDateYE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
+
         javax.swing.GroupLayout jPanelInTenantLayout = new javax.swing.GroupLayout(jPanelInTenant);
         jPanelInTenant.setLayout(jPanelInTenantLayout);
         jPanelInTenantLayout.setHorizontalGroup(
@@ -989,8 +1043,18 @@ public class mainPanel extends javax.swing.JFrame {
                         .addGap(146, 146, 146)
                         .addGroup(jPanelInTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel23)
-                            .addComponent(jCBInTenantProperty, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jCBInTenantProperty, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelInTenantLayout.createSequentialGroup()
+                        .addComponent(jCBInTenantDateMS, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jCBInTenantDateYS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel42)
+                    .addGroup(jPanelInTenantLayout.createSequentialGroup()
+                        .addComponent(jCBInTenantDateME, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(jCBInTenantDateYE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel43))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         jPanelInTenantLayout.setVerticalGroup(
             jPanelInTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1015,7 +1079,19 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jLabel22)
                 .addGap(0, 0, 0)
                 .addComponent(jCBInTenantDependents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 233, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
+                .addComponent(jLabel42)
+                .addGap(1, 1, 1)
+                .addGroup(jPanelInTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCBInTenantDateMS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCBInTenantDateYS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(jLabel43)
+                .addGap(1, 1, 1)
+                .addGroup(jPanelInTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCBInTenantDateME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCBInTenantDateYE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelInTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonTenantClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonTenantAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1048,10 +1124,12 @@ public class mainPanel extends javax.swing.JFrame {
             }
         });
 
+        jTAOutTenantInfo.setEditable(false);
         jTAOutTenantInfo.setColumns(20);
         jTAOutTenantInfo.setRows(5);
         jScrollPane4.setViewportView(jTAOutTenantInfo);
 
+        jTAOutTenantPay.setEditable(false);
         jTAOutTenantPay.setColumns(20);
         jTAOutTenantPay.setRows(5);
         jScrollPane5.setViewportView(jTAOutTenantPay);
@@ -1103,10 +1181,12 @@ public class mainPanel extends javax.swing.JFrame {
 
         jLabel34.setText("Select Property");
 
+        jTAOutPropInfo.setEditable(false);
         jTAOutPropInfo.setColumns(20);
         jTAOutPropInfo.setRows(5);
         jScrollPane3.setViewportView(jTAOutPropInfo);
 
+        jTAOutPropRepair.setEditable(false);
         jTAOutPropRepair.setColumns(20);
         jTAOutPropRepair.setRows(5);
         jScrollPane6.setViewportView(jTAOutPropRepair);
@@ -1145,7 +1225,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
                     .addComponent(jScrollPane3))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Property Info", jPanelOutProp);
@@ -1155,10 +1235,16 @@ public class mainPanel extends javax.swing.JFrame {
         jCBOutRepair.setModel(new javax.swing.DefaultComboBoxModel(repairCB));
 
         jButtonOutRepair.setText("Load");
+        jButtonOutRepair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOutRepairActionPerformed(evt);
+            }
+        });
 
-        jTextArea5.setColumns(20);
-        jTextArea5.setRows(5);
-        jScrollPane7.setViewportView(jTextArea5);
+        jTAOutRepair.setEditable(false);
+        jTAOutRepair.setColumns(20);
+        jTAOutRepair.setRows(5);
+        jScrollPane7.setViewportView(jTAOutRepair);
 
         javax.swing.GroupLayout jPanelOutRepairLayout = new javax.swing.GroupLayout(jPanelOutRepair);
         jPanelOutRepair.setLayout(jPanelOutRepairLayout);
@@ -1167,12 +1253,13 @@ public class mainPanel extends javax.swing.JFrame {
             .addGroup(jPanelOutRepairLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelOutRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel40)
                     .addGroup(jPanelOutRepairLayout.createSequentialGroup()
-                        .addComponent(jCBOutRepair, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(jButtonOutRepair))
-                    .addComponent(jLabel40))
+                        .addGroup(jPanelOutRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+                            .addComponent(jCBOutRepair, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(83, 83, 83)
+                        .addComponent(jButtonOutRepair)))
                 .addContainerGap(141, Short.MAX_VALUE))
         );
         jPanelOutRepairLayout.setVerticalGroup(
@@ -1186,10 +1273,255 @@ public class mainPanel extends javax.swing.JFrame {
                     .addComponent(jButtonOutRepair))
                 .addGap(65, 65, 65)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Repair Info", jPanelOutRepair);
+
+        jCBOutOwner.setModel(new javax.swing.DefaultComboBoxModel(ownerCB));
+
+        jLabel41.setText("Select Owner");
+
+        jButtonOutOwner.setText("Load");
+        jButtonOutOwner.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOutOwnerActionPerformed(evt);
+            }
+        });
+
+        jTAOutOwnerInfo.setEditable(false);
+        jTAOutOwnerInfo.setColumns(20);
+        jTAOutOwnerInfo.setRows(5);
+        jScrollPane1.setViewportView(jTAOutOwnerInfo);
+
+        jTAOutOwnerPay.setEditable(false);
+        jTAOutOwnerPay.setColumns(20);
+        jTAOutOwnerPay.setRows(5);
+        jScrollPane8.setViewportView(jTAOutOwnerPay);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel41)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jCBOutOwner, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(106, 106, 106)
+                                .addComponent(jButtonOutOwner)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel41)
+                .addGap(0, 0, 0)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCBOutOwner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonOutOwner))
+                .addGap(65, 65, 65)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addContainerGap(109, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Owner Info", jPanel3);
+
+        jCBOutPayM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+
+        jCBOutPayY.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017" }));
+
+        jLabel44.setText("Select Payment Month");
+
+        jButtonOutPay.setText("Load");
+        jButtonOutPay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOutPayActionPerformed(evt);
+            }
+        });
+
+        jTAOutPayPaid.setEditable(false);
+        jTAOutPayPaid.setColumns(20);
+        jTAOutPayPaid.setRows(5);
+        jScrollPane9.setViewportView(jTAOutPayPaid);
+
+        jTAOutPayNP.setEditable(false);
+        jTAOutPayNP.setColumns(20);
+        jTAOutPayNP.setRows(5);
+        jScrollPane10.setViewportView(jTAOutPayNP);
+
+        jLabel45.setText("Paid");
+
+        jLabel46.setText("Not Paid");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel44)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jCBOutPayM, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(33, 33, 33)
+                                .addComponent(jCBOutPayY, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel45))
+                        .addGap(113, 113, 113)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel46)
+                            .addComponent(jButtonOutPay)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(113, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCBOutPayM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCBOutPayY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonOutPay))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(jLabel46))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
+                    .addComponent(jScrollPane9))
+                .addContainerGap(90, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Payment", jPanel4);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane11.setViewportView(jTextArea1);
+
+        jCBOutSearchYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017" }));
+
+        jLabel47.setText("County");
+
+        jCBOutSearchCounty.setModel(new javax.swing.DefaultComboBoxModel(countyCB));
+
+        jLabel48.setText("Bedroom");
+
+        jCBOutSearchBed.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7+", " " }));
+
+        jLabel49.setText("Bathroom");
+
+        jCBOutSearchBath.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5", "6", "7+" }));
+
+        jLabel50.setText("Property Type");
+
+        jCBOutSearchType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Condo", "Townhouse", "Single Family" }));
+
+        jLabel51.setText("Size");
+
+        jLabel52.setText("Year Built");
+
+        jLabel53.setText("Max Rent");
+
+        jButtonSearch.setText("Search");
+        jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSearchActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCBOutSearchCounty, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCBOutSearchYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel47)
+                            .addComponent(jLabel50)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jCBOutSearchType, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jCBOutSearchBed, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel48))
+                                    .addGap(34, 34, 34)
+                                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel49)
+                                        .addComponent(jCBOutSearchBath, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel51)
+                            .addComponent(jTextOutSearchSize, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel52)
+                            .addComponent(jTextSearchMaxRent, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel53)
+                            .addComponent(jButtonSearch))
+                        .addGap(0, 64, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel51)
+                        .addGap(0, 0, 0)
+                        .addComponent(jTextOutSearchSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel52)
+                        .addGap(1, 1, 1)
+                        .addComponent(jCBOutSearchYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel47)
+                        .addGap(0, 0, 0)
+                        .addComponent(jCBOutSearchCounty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel49)
+                            .addComponent(jLabel48))
+                        .addGap(0, 0, 0)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCBOutSearchBed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCBOutSearchBath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel50)
+                        .addGap(2, 2, 2)
+                        .addComponent(jCBOutSearchType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(jLabel53)
+                        .addGap(0, 0, 0)
+                        .addComponent(jTextSearchMaxRent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonSearch))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Property Search", jPanel5);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1252,6 +1584,10 @@ public class mainPanel extends javax.swing.JFrame {
         String tenantPhone = jTextInTenantPhone.getText();
         int tenantDep = jCBInTenantDependents.getSelectedIndex();
         String PropertyID = jCBInTenantProperty.getSelectedItem().toString();
+        int startM = jCBInTenantDateMS.getSelectedIndex() + 1;
+        int startY = jCBInTenantDateYS.getSelectedIndex() + 2010;
+        int endM = jCBInTenantDateME.getSelectedIndex() + 1;
+        int endY = jCBInTenantDateYE.getSelectedIndex() + 2010;
         
     }//GEN-LAST:event_jButtonTenantAddActionPerformed
 
@@ -1383,6 +1719,37 @@ public class mainPanel extends javax.swing.JFrame {
         jTextInStorePhone.setText(null);
     }//GEN-LAST:event_jButtonStoreClearActionPerformed
 
+    private void jButtonOutOwnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutOwnerActionPerformed
+        // TODO add your handling code here:
+        String ownerName = jCBOutOwner.getSelectedItem().toString();
+        String ownerInfo = "Info";
+        jTAOutOwnerInfo.setText(ownerInfo);
+        String getOwnerID = "Select ownerID from owner where name = \"" +ownerName+"\"";
+        jTAOutOwnerPay.setText(getOwnerID);
+    }//GEN-LAST:event_jButtonOutOwnerActionPerformed
+
+    private void jButtonOutRepairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutRepairActionPerformed
+        // TODO add your handling code here:
+        String repair = jCBOutRepair.getSelectedItem().toString();
+        String repairInfo = "Info";
+        jTAOutRepair.setText(repairInfo);
+    }//GEN-LAST:event_jButtonOutRepairActionPerformed
+
+    private void jButtonOutPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutPayActionPerformed
+        // TODO add your handling code here:
+        int month = jCBOutPayM.getSelectedIndex()+1;
+        int year  = jCBOutPayY.getSelectedIndex()+2010;
+    }//GEN-LAST:event_jButtonOutPayActionPerformed
+
+    private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
+        // TODO add your handling code here:
+        int size = Integer.parseInt(jTextOutSearchSize.getText().toString());
+        int year = jCBOutSearchYear.getSelectedIndex() + 1917;
+        String county = jCBOutSearchCounty.getSelectedItem().toString();
+        int bedNum = jCBOutSearchBed.getSelectedIndex();
+        int bathNum = jCBOutSearchBath.getSelectedIndex();
+    }//GEN-LAST:event_jButtonSearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1422,6 +1789,8 @@ public class mainPanel extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonClear;
     private javax.swing.JButton jButtonOGAdd;
+    private javax.swing.JButton jButtonOutOwner;
+    private javax.swing.JButton jButtonOutPay;
     private javax.swing.JButton jButtonOutPropLoad;
     private javax.swing.JButton jButtonOutRepair;
     private javax.swing.JButton jButtonOutTenantLoad;
@@ -1435,6 +1804,7 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRCClear;
     private javax.swing.JButton jButtonRepairAdd;
     private javax.swing.JButton jButtonRepairClear;
+    private javax.swing.JButton jButtonSearch;
     private javax.swing.JButton jButtonStoreAdd;
     private javax.swing.JButton jButtonStoreClear;
     private javax.swing.JButton jButtonTenantAdd;
@@ -1457,10 +1827,22 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jCBInRepairProperty;
     private javax.swing.JComboBox<String> jCBInRepairRC;
     private javax.swing.JComboBox<String> jCBInRepairStore;
+    private javax.swing.JComboBox<String> jCBInTenantDateME;
+    private javax.swing.JComboBox<String> jCBInTenantDateMS;
+    private javax.swing.JComboBox<String> jCBInTenantDateYE;
+    private javax.swing.JComboBox<String> jCBInTenantDateYS;
     private javax.swing.JComboBox<String> jCBInTenantDependents;
     private javax.swing.JComboBox<String> jCBInTenantProperty;
+    private javax.swing.JComboBox<String> jCBOutOwner;
+    private javax.swing.JComboBox<String> jCBOutPayM;
+    private javax.swing.JComboBox<String> jCBOutPayY;
     private javax.swing.JComboBox<String> jCBOutProp;
     private javax.swing.JComboBox<String> jCBOutRepair;
+    private javax.swing.JComboBox<String> jCBOutSearchBath;
+    private javax.swing.JComboBox<String> jCBOutSearchBed;
+    private javax.swing.JComboBox<String> jCBOutSearchCounty;
+    private javax.swing.JComboBox<String> jCBOutSearchType;
+    private javax.swing.JComboBox<String> jCBOutSearchYear;
     private javax.swing.JComboBox<String> jCBOutTenantName;
     private javax.swing.JLabel jLabeTlPN;
     private javax.swing.JLabel jLabel1;
@@ -1498,7 +1880,20 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1507,6 +1902,9 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jPaneInput;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanelInOwner;
     private javax.swing.JPanel jPanelInOwnerGroup;
     private javax.swing.JPanel jPanelInPayment;
@@ -1520,18 +1918,28 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelOutProp;
     private javax.swing.JPanel jPanelOutRepair;
     private javax.swing.JPanel jPanelOutTenant;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextArea jTAOutOwnerInfo;
+    private javax.swing.JTextArea jTAOutOwnerPay;
+    private javax.swing.JTextArea jTAOutPayNP;
+    private javax.swing.JTextArea jTAOutPayPaid;
     private javax.swing.JTextArea jTAOutPropInfo;
     private javax.swing.JTextArea jTAOutPropRepair;
+    private javax.swing.JTextArea jTAOutRepair;
     private javax.swing.JTextArea jTAOutTenantInfo;
     private javax.swing.JTextArea jTAOutTenantPay;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextInOwnerEmail;
     private javax.swing.JTextField jTextInOwnerName;
     private javax.swing.JTextField jTextInOwnerPhoneNum;
@@ -1561,6 +1969,8 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JTextField jTextInTenantEmail;
     private javax.swing.JTextField jTextInTenantName;
     private javax.swing.JTextField jTextInTenantPhone;
+    private javax.swing.JTextField jTextOutSearchSize;
+    private javax.swing.JTextField jTextSearchMaxRent;
     private javax.swing.JLabel propertyVar1;
     private javax.swing.JLabel propertyVar2;
     private javax.swing.JLabel propertyVar3;
