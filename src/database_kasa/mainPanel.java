@@ -35,6 +35,8 @@ public class mainPanel extends javax.swing.JFrame {
         repairCompanyCB  = new String[]{"Repair Co"};
         storeCB = new String[]{"Home Depot, 123 street"};
         countyCB = new String[]{"Montgomery", "Prince Georges"};
+        countyCBNull = new String[]{"", "Montgomery", "Prince Georges"};
+        payCB = new String[]{"2123 ow", "2123132 ss"};
         initComponents(); 
          
         
@@ -103,6 +105,8 @@ public class mainPanel extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jPanelInStores = new javax.swing.JPanel();
         jButtonStoreAdd = new javax.swing.JButton();
         jButtonStoreClear = new javax.swing.JButton();
@@ -121,7 +125,7 @@ public class mainPanel extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jPanelInProperty = new javax.swing.JPanel();
         jButtonPropAdd = new javax.swing.JButton();
-        jButtonProbClear = new javax.swing.JButton();
+        jButtonPropClear = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanelInProp = new javax.swing.JPanel();
@@ -224,7 +228,7 @@ public class mainPanel extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jTextOutSearchSize = new javax.swing.JTextField();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTAOutSearch = new javax.swing.JTextArea();
         jCBOutSearchYear = new javax.swing.JComboBox<>();
         jLabel47 = new javax.swing.JLabel();
         jCBOutSearchCounty = new javax.swing.JComboBox<>();
@@ -236,7 +240,7 @@ public class mainPanel extends javax.swing.JFrame {
         jCBOutSearchType = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
-        jTextSearchMaxRent = new javax.swing.JTextField();
+        jTextOutSearchRent = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
         jButtonSearch = new javax.swing.JButton();
 
@@ -528,6 +532,8 @@ public class mainPanel extends javax.swing.JFrame {
 
         jLabel38.setText("Repair Cost");
 
+        jLabel54.setText("Purchase Date");
+
         javax.swing.GroupLayout jPanelInRepairLayout = new javax.swing.GroupLayout(jPanelInRepair);
         jPanelInRepair.setLayout(jPanelInRepairLayout);
         jPanelInRepairLayout.setHorizontalGroup(
@@ -561,17 +567,19 @@ public class mainPanel extends javax.swing.JFrame {
                                     .addComponent(jCBInRepairRC, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabelRC)
                                     .addComponent(jLabel37)
-                                    .addComponent(jTextInRepairman, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextInRepairman, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel38)
+                                    .addComponent(jTextInRepairRCost, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(155, 155, 155)
                                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel54)
                                     .addComponent(jLabel35)
                                     .addComponent(jCBInRepairStore, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jTextInRepairMCost, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                            .addComponent(jLabel38)
-                            .addComponent(jTextInRepairRCost, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                        .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addGap(0, 64, Short.MAX_VALUE))))
         );
         jPanelInRepairLayout.setVerticalGroup(
             jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -604,9 +612,13 @@ public class mainPanel extends javax.swing.JFrame {
                     .addComponent(jTextInRepairMCost)
                     .addComponent(jTextInRepairman))
                 .addGap(26, 26, 26)
-                .addComponent(jLabel38)
+                .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel54))
                 .addGap(1, 1, 1)
-                .addComponent(jTextInRepairRCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextInRepairRCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRepairClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -762,10 +774,15 @@ public class mainPanel extends javax.swing.JFrame {
             }
         });
 
-        jButtonProbClear.setText("Clear");
-        jButtonProbClear.setMaximumSize(new java.awt.Dimension(70, 29));
-        jButtonProbClear.setMinimumSize(new java.awt.Dimension(70, 29));
-        jButtonProbClear.setPreferredSize(null);
+        jButtonPropClear.setText("Clear");
+        jButtonPropClear.setMaximumSize(new java.awt.Dimension(70, 29));
+        jButtonPropClear.setMinimumSize(new java.awt.Dimension(70, 29));
+        jButtonPropClear.setPreferredSize(null);
+        jButtonPropClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPropClearActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Address");
 
@@ -956,7 +973,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonPropAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
-                .addComponent(jButtonProbClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonPropClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(238, 238, 238))
             .addGroup(jPanelInPropertyLayout.createSequentialGroup()
                 .addComponent(jScrollPane2)
@@ -968,7 +985,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanelInPropertyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonProbClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonPropClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonPropAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -1411,15 +1428,15 @@ public class mainPanel extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Payment", jPanel4);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane11.setViewportView(jTextArea1);
+        jTAOutSearch.setColumns(20);
+        jTAOutSearch.setRows(5);
+        jScrollPane11.setViewportView(jTAOutSearch);
 
         jCBOutSearchYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1917", "1918", "1919", "1920", "1921", "1922", "1923", "1924", "1925", "1926", "1927", "1928", "1929", "1930", "1931", "1932", "1933", "1934", "1935", "1936", "1937", "1938", "1939", "1940", "1941", "1942", "1943", "1944", "1945", "1946", "1947", "1948", "1949", "1950", "1951", "1952", "1953", "1954", "1955", "1956", "1957", "1958", "1959", "1960", "1961", "1962", "1963", "1964", "1965", "1966", "1967", "1968", "1969", "1970", "1971", "1972", "1973", "1974", "1975", "1976", "1977", "1978", "1979", "1980", "1981", "1982", "1983", "1984", "1985", "1986", "1987", "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017" }));
 
         jLabel47.setText("County");
 
-        jCBOutSearchCounty.setModel(new javax.swing.DefaultComboBoxModel(countyCB));
+        jCBOutSearchCounty.setModel(new javax.swing.DefaultComboBoxModel(countyCBNull));
 
         jLabel48.setText("Bedroom");
 
@@ -1472,7 +1489,7 @@ public class mainPanel extends javax.swing.JFrame {
                             .addComponent(jLabel51)
                             .addComponent(jTextOutSearchSize, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel52)
-                            .addComponent(jTextSearchMaxRent, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextOutSearchRent, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel53)
                             .addComponent(jButtonSearch))
                         .addGap(0, 64, Short.MAX_VALUE)))
@@ -1512,7 +1529,7 @@ public class mainPanel extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(jLabel53)
                         .addGap(0, 0, 0)
-                        .addComponent(jTextSearchMaxRent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextOutSearchRent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonSearch))
                     .addGroup(jPanel5Layout.createSequentialGroup()
@@ -1542,30 +1559,58 @@ public class mainPanel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonPropAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPropAddActionPerformed
-        // TODO add your handling code here:
+        // Add property button
+        
         String propName = jTextInPropertyAddress.getText();
         String propCity = jTextInPropertyCity.getText();
         String propZip = jTextInPropertyZip.getText();
-        String OwnerName = jCBInPropertyOwner.getSelectedItem().toString();
+        int ownerID = jCBInPropertyOwner.getSelectedIndex();
         int size = Integer.parseInt(jTextInPropertySize.getText().toString());
         int year = jCBInPropertyYear.getSelectedIndex() + 1917;
         String county = jCBInPropertyCounty.getSelectedItem().toString();
         int bedNum = jCBInPropertyBed.getSelectedIndex();
         int bathNum = jCBInPropertyBath.getSelectedIndex();
+        //Inserts data into property table
+        String query = "INSERT into property VALUES(\"" + propName + "\", \"" + propCity
+                +"\", \"" + propZip+ "\", " + ownerID +", " + size + ", " + year
+                +", \""+ county + "\", " + bedNum +", " + bathNum +");";
+        System.out.println(query);
+        int type =  jCBInPropertyType.getSelectedIndex();
+        String var1 = jTextInPropertyVar1.getText();
+        String var2 = jTextInPropertyVar2.getText();
+        String var3 = jTextInPropertyVar3.getText();
+        //Inserts data into condo , townhouse, single family tables
+        if (type ==0){
+            query = "INSERT into Condo VALUES(\"" + propName + "\", \"" + var1 + "\");";
+            System.out.println(query);
+        }
+        if (type == 1){
+            query = "INSERT into TownHouse VALUES(\"" + propName + "\", \"" + var1
+                    + "\", \"" + var2+ "\", \"" + var3+ "\");";
+            System.out.println(query);
+        }
+        if (type == 2){
+            query = "INSERT into SingleFamilyHouse VALUES(\"" + propName + "\", \"" + var1
+                    + "\", \"" + var2 + "\");";
+            System.out.println(query);
+        }
         
     }//GEN-LAST:event_jButtonPropAddActionPerformed
 
     private void jButtonStoreAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoreAddActionPerformed
-        // TODO add your handling code here:
+        // Add Store Button
         String storeName = jTextInStoreName.getText();
         String storeAddress = jTextInStoreAddress.getText();
         String storePhone = jTextInStorePhone.getText();
-        
+        String query = "INSERT into Store VALUES(\"" + storeName + "\", \"" + storeAddress
+                    + "\", \"" + storePhone + "\");";
+        System.out.println(query);
         jButtonStoreClearActionPerformed(null);
     }//GEN-LAST:event_jButtonStoreAddActionPerformed
 
     private void jButtonPayAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPayAddActionPerformed
-        // TODO add your handling code here:
+        // Add payment button
+        int paymentId = payCB.length;
         String propName = jCBInPayProperty.getSelectedItem().toString();
         String tenantName = jCBInPayTenant.getSelectedItem().toString();
         int tenantPay = Integer.parseInt(jTextInPayTenant.getText());
@@ -1574,43 +1619,62 @@ public class mainPanel extends javax.swing.JFrame {
         int oMonth = jCBInPayOM.getSelectedIndex()+1;
         int tYear =  jCBInPayTY.getSelectedIndex()+2010;
         int oYear =  jCBInPayOY.getSelectedIndex()+2010;
+        
+        String query = "INSERT into RentPayment VALUES(" +paymentId + ", \"" + tenantName +
+                "\", " + tenantPay + ", " + tMonth + ", " + tYear + ", " +
+                ownerPay + ", " + oMonth + ", " + oYear + ", \"" + propName + "\");";
+        System.out.println(query);
+        
         jButtonPayClearActionPerformed(null);
     }//GEN-LAST:event_jButtonPayAddActionPerformed
 
     private void jButtonTenantAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTenantAddActionPerformed
-        // TODO add your handling code here:
+        //Add tenant button
+        int tenantId = (tenantCB.length);
         String tenantName = jTextInTenantName.getText();
         String tenantEmail = jTextInTenantEmail.getText();
         String tenantPhone = jTextInTenantPhone.getText();
         int tenantDep = jCBInTenantDependents.getSelectedIndex();
-        String PropertyID = jCBInTenantProperty.getSelectedItem().toString();
+        String propertyID = jCBInTenantProperty.getSelectedItem().toString();
         int startM = jCBInTenantDateMS.getSelectedIndex() + 1;
         int startY = jCBInTenantDateYS.getSelectedIndex() + 2010;
         int endM = jCBInTenantDateME.getSelectedIndex() + 1;
         int endY = jCBInTenantDateYE.getSelectedIndex() + 2010;
         
+        String query = "INSERT into Tenant VALUES(" +tenantId + ", \"" + tenantName +
+                "\", \"" + tenantEmail + "\", \"" + tenantPhone + "\", " +
+                tenantDep + ", \"" + propertyID + "\", " + startM + ", " + startY +
+                ", " + endM+ ", " + endY+ ");";
+        System.out.println(query);
     }//GEN-LAST:event_jButtonTenantAddActionPerformed
 
     private void jButtonOGAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOGAddActionPerformed
-        // TODO add your handling code here:
-        String ownerAdd = jCBInOGOwner.getSelectedItem().toString();
-        String ownerGroup = jCBInOGGroup.getSelectedItem().toString();
-        String findOwnerID = "Select ownerID from owner where name = \"" +ownerAdd+"\"";
-        String findGroupID = "Select ownerID from owner where name = \"" +ownerGroup+"\"";
-        System.out.println(findOwnerID + "\n" + findGroupID);
+        // Add owner to group button
+        int ownerAddId = (jCBInOGOwner.getSelectedIndex());
+        int ownerGroupId = (jCBInOGGroup.getSelectedIndex());
+        //String findOwnerID = "Select ownerID from owner where name = \"" +ownerAdd+"\"";
+        //String findGroupID = "Select ownerID from owner where name = \"" +ownerGroup+"\"";
+        //System.out.println(findOwnerID + "\n" + findGroupID);
+        String query = "INSERT into OwnerGroup VALUES(" +ownerAddId + ", " + ownerGroupId+");";
+        System.out.println(query);
     }//GEN-LAST:event_jButtonOGAddActionPerformed
 
     private void jButtonOwnerAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOwnerAddActionPerformed
-        // TODO add your handling code here:
+        // Add owner button
+        String ownerId = Integer.toString(ownerCB.length);
         String ownerName = jTextInOwnerName.getText();
         String ownerPhone = jTextInOwnerPhoneNum.getText();
         String ownerEmail = jTextInOwnerEmail.getText();
+        String query = "INSERT into Owner VALUES(" +ownerId + ", \"" + ownerName +
+                "\", \"" + ownerEmail + "\", \"" + ownerPhone + "\", " +
+                ");";
+        System.out.println(query);
         
         jButtonOwnerClearActionPerformed(null); 
     }//GEN-LAST:event_jButtonOwnerAddActionPerformed
 
     private void jCBInPropertyRSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBInPropertyRSActionPerformed
-        // TODO add your handling code here:
+        // Changes the labels based on what type of property is selected(condo, touwnhouse, SFH)
         int type =  jCBInPropertyRS.getSelectedIndex();
         jTextInPropertyVar4.setText("");
         jTextInPropertyVar5.setText("");
@@ -1628,13 +1692,18 @@ public class mainPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_jCBInPropertyRSActionPerformed
 
     private void jButtonRCAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRCAddActionPerformed
-        // TODO add your handling code here:
+        // Adds repair company
+        int rCId = (repairCompanyCB.length);
         String rCName = jTextInRCName.getText();
         String rCPhone = jTextInRCPhone.getText();
+        
+        String query = "INSERT into RepairCompany VALUES(" +rCId + ", \"" + rCName +
+                "\", \"" + rCPhone + "\", " +");";
+        System.out.println(query);
     }//GEN-LAST:event_jButtonRCAddActionPerformed
 
     private void jCBInPropertyTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBInPropertyTypeActionPerformed
-        // TODO add your handling code here:
+        //  // Changes the labels based on what type of property is selected(rental sale)
         int type =  jCBInPropertyType.getSelectedIndex();
        jTextInPropertyVar1.setText("");
        jTextInPropertyVar2.setText("");
@@ -1657,34 +1726,44 @@ public class mainPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_jCBInPropertyTypeActionPerformed
 
     private void jButtonOutTenantLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutTenantLoadActionPerformed
-        // TODO add your handling code here:
+        // Loads tenant information
+        int tenantId = jCBOutTenantName.getSelectedIndex();
         String tenantName = jCBOutTenantName.getSelectedItem().toString();
         String tenantInfo = "Info";
         jTAOutTenantInfo.setText(tenantInfo);
-        String getTenantID = "Select tenantID from tenant where name = \"" +tenantName+"\"";
-        jTAOutTenantPay.setText(getTenantID);
+        String getTenantInfo = "Select * from tenant where tenantId = " +tenantId+");";
+        jTAOutTenantPay.setText(getTenantInfo);
     }//GEN-LAST:event_jButtonOutTenantLoadActionPerformed
 
     private void jButtonOutPropLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutPropLoadActionPerformed
-        // TODO add your handling code here:
+        // Loads property Information
         String propName = jCBOutProp.getSelectedItem().toString();
-        String propInfo = "Info";
+        String propInfo = "Select * from property where propertyId = \"" +propName+"\"";;
         jTAOutPropInfo.setText(propInfo);
-        String getRepairs = "Select repairID from repair where property = \"" +propName+"\"";
+        String getRepairs = "Select repairID from repair where propertyId = \"" +propName+"\"";
         jTAOutPropRepair.setText(getRepairs);
     }//GEN-LAST:event_jButtonOutPropLoadActionPerformed
 
     private void jButtonRepairAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRepairAddActionPerformed
-        // TODO add your handling code here:
+        // add repair records button
+        int repairId = repairCB.length;
         String propName = jCBInRepairProperty.getSelectedItem().toString();
         int month = Integer.parseInt(jTextInRepairDateM.getText());
         int day = Integer.parseInt(jTextInRepairDateD.getText());
         int year = Integer.parseInt(jTextInRepairDateY.getText());
+        String rDate = "1";
         String repairCompany = jCBInRepairRC.getSelectedItem().toString();
         String repairmanName = jTextInRepairman.getText();
         String store = jCBInRepairStore.getSelectedItem().toString();
-        int rCost = Integer.parseInt(jTextInRepairRCost.getText());
-        int mCost = Integer.parseInt(jTextInRepairMCost.getText());
+        String mDate = "1";
+        float rCost = Float.parseFloat(jTextInRepairRCost.getText());
+        float mCost = Float.parseFloat(jTextInRepairMCost.getText());
+        
+        String query = "INSERT into RepairCompany VALUES(" +repairId + ", \"" + propName +
+                "\", " +rCost +", " + rDate + ", \"" + repairCompany + "\", \"" 
+                + repairmanName +"\", " + mCost + ", " +mDate + ", \""+
+                store + "\");";
+        System.out.println(query);
         
         jButtonRepairClearActionPerformed(null);
     }//GEN-LAST:event_jButtonRepairAddActionPerformed
@@ -1720,35 +1799,114 @@ public class mainPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonStoreClearActionPerformed
 
     private void jButtonOutOwnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutOwnerActionPerformed
-        // TODO add your handling code here:
+        // Loads owner information
+        int ownerId = jCBOutOwner.getSelectedIndex();
         String ownerName = jCBOutOwner.getSelectedItem().toString();
         String ownerInfo = "Info";
         jTAOutOwnerInfo.setText(ownerInfo);
-        String getOwnerID = "Select ownerID from owner where name = \"" +ownerName+"\"";
-        jTAOutOwnerPay.setText(getOwnerID);
+        String query = "Select * from owner where ownerID = " +ownerId+");";
+        jTAOutOwnerPay.setText(query);
     }//GEN-LAST:event_jButtonOutOwnerActionPerformed
 
     private void jButtonOutRepairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutRepairActionPerformed
-        // TODO add your handling code here:
+        // Loads repair information
+        int repairId = jCBOutRepair.getSelectedIndex();
         String repair = jCBOutRepair.getSelectedItem().toString();
         String repairInfo = "Info";
-        jTAOutRepair.setText(repairInfo);
+        String query = "Select * FROM Repair WHERE repairId = " + repairId + ");";
+        jTAOutRepair.setText(query);
     }//GEN-LAST:event_jButtonOutRepairActionPerformed
 
     private void jButtonOutPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutPayActionPerformed
-        // TODO add your handling code here:
+        // Loads tenants who paid rent and those who didnt
         int month = jCBOutPayM.getSelectedIndex()+1;
         int year  = jCBOutPayY.getSelectedIndex()+2010;
+        int absoluteDate = year*12+month;
+        String query = "Select tenantName"
+                + "From Tenant"
+                + "Where"
+                + "tenantID IN"
+                + "(Select tenantID FROM RentPayment where "
+                    + " Tenantpaymentmonth = " + month 
+                    + " AND Tenantpaymentyear= " + year+")"
+                + " AND Monthstartrent+ Yearstartrent*12 < " +absoluteDate
+                + " AND Monthendrent+ Yearendrent*12 > " + absoluteDate +");";
+        jTAOutPayPaid.setText(query);
+        
+        query = "Select tenantName"
+                + " From Tenant"
+                + " Where"
+                + " tenantID NOT IN"
+                + " (Select tenantID FROM RentPayment where "
+                    + "Tenantpaymentmonth = " + month 
+                    + " AND Tenantpaymentyear= " + year+")"
+                + " AND Monthstartrent+ Yearstartrent*12 < " +absoluteDate
+                + " AND Monthendrent+ Yearendrent*12 > " + absoluteDate +");";
+        jTAOutPayNP.setText(query);
+
     }//GEN-LAST:event_jButtonOutPayActionPerformed
 
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
-        // TODO add your handling code here:
-        int size = Integer.parseInt(jTextOutSearchSize.getText().toString());
+        // Loads rental properties that match the search criteria
+        int size=0;
+        String county = "";
+        int price =Integer.MAX_VALUE;
+        if (!jTextOutSearchSize.getText().isEmpty()){
+            size = Integer.parseInt(jTextOutSearchSize.getText());
+        }
         int year = jCBOutSearchYear.getSelectedIndex() + 1917;
-        String county = jCBOutSearchCounty.getSelectedItem().toString();
+        county = jCBOutSearchCounty.getSelectedItem().toString();
         int bedNum = jCBOutSearchBed.getSelectedIndex();
         int bathNum = jCBOutSearchBath.getSelectedIndex();
+        if (!jTextOutSearchRent.getText().isEmpty()){
+            price = Integer.parseInt(jTextOutSearchRent.getText());
+        }
+        int type = jCBOutSearchType.getSelectedIndex();
+        String query = "Select propertyID "
+                + "FROM property p, rental r "
+                + "Where"
+                + " p.size > " + size
+                + " AND p.year >" + year
+                + " AND p.number_of_bedrooms >"+ bedNum
+                + " AND p.number_of_bathrooms >"+ bathNum
+                + " AND r.price <" + price
+                + " AND p.propertyID = r.propertyID";
+        if(county != ""){
+           query = query + " AND p.county = \"" + county +"\"";  
+        }
+        switch (type) {
+            case 0 : query+=" And p.propertyID IN (Select propertyID from Condo)";
+            break;
+            
+            case 1 : query+=" And p.propertyID IN (Select propertyID from TownHouse)";
+            break;
+            
+            case 2 : query+=" And p.propertyID IN (Select propertyID from SingleFamilyHouse)";
+            break;
+        }
+        query+=");";
+        jTAOutSearch.setText(query);
+    
     }//GEN-LAST:event_jButtonSearchActionPerformed
+
+    private void jButtonPropClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPropClearActionPerformed
+        // TODO add your handling code here:
+        jTextInPropertyAddress.setText("");
+        jTextInPropertyCity.setText("");
+        jTextInPropertyZip.setText("");
+        jCBInPropertyOwner.setSelectedIndex(0);
+        jTextInPropertySize.setText("");
+        jCBInPropertyYear.setSelectedIndex(0);
+        jCBInPropertyCounty.setSelectedIndex(0);
+        jCBInPropertyBed.setSelectedIndex(0);
+        jCBInPropertyBath.setSelectedIndex(0);
+        jTextInPropertyVar1.setText("");
+        jTextInPropertyVar2.setText("");
+        jTextInPropertyVar3.setText("");
+        jTextInPropertyVar4.setText("");
+        jTextInPropertyVar5.setText("");
+        jTextInPropertyVar6.setText("");
+    }//GEN-LAST:event_jButtonPropClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1798,8 +1956,8 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JButton jButtonOwnerClear;
     private javax.swing.JButton jButtonPayAdd;
     private javax.swing.JButton jButtonPayClear;
-    private javax.swing.JButton jButtonProbClear;
     private javax.swing.JButton jButtonPropAdd;
+    private javax.swing.JButton jButtonPropClear;
     private javax.swing.JButton jButtonRCAdd;
     private javax.swing.JButton jButtonRCClear;
     private javax.swing.JButton jButtonRepairAdd;
@@ -1894,6 +2052,7 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1936,10 +2095,11 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JTextArea jTAOutPropInfo;
     private javax.swing.JTextArea jTAOutPropRepair;
     private javax.swing.JTextArea jTAOutRepair;
+    private javax.swing.JTextArea jTAOutSearch;
     private javax.swing.JTextArea jTAOutTenantInfo;
     private javax.swing.JTextArea jTAOutTenantPay;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextInOwnerEmail;
     private javax.swing.JTextField jTextInOwnerName;
     private javax.swing.JTextField jTextInOwnerPhoneNum;
@@ -1969,8 +2129,8 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JTextField jTextInTenantEmail;
     private javax.swing.JTextField jTextInTenantName;
     private javax.swing.JTextField jTextInTenantPhone;
+    private javax.swing.JTextField jTextOutSearchRent;
     private javax.swing.JTextField jTextOutSearchSize;
-    private javax.swing.JTextField jTextSearchMaxRent;
     private javax.swing.JLabel propertyVar1;
     private javax.swing.JLabel propertyVar2;
     private javax.swing.JLabel propertyVar3;
@@ -1985,4 +2145,6 @@ public class mainPanel extends javax.swing.JFrame {
     private String[] repairCompanyCB;
     private String[] storeCB;
     private String[] countyCB;
+    private String[] countyCBNull;
+    private String[] payCB;
 }

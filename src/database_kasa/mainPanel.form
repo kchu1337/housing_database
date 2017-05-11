@@ -602,21 +602,23 @@
                                                   <Component id="jLabelRC" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jTextInRepairman" alignment="0" min="-2" pref="142" max="-2" attributes="0"/>
+                                                  <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jTextInRepairRCost" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jCBInRepairStore" min="-2" pref="223" max="-2" attributes="0"/>
                                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="jTextField1" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="jTextInRepairMCost" alignment="0" max="32767" attributes="0"/>
                                                       <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                           </Group>
-                                          <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextInRepairRCost" alignment="0" min="-2" pref="99" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="64" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -658,9 +660,15 @@
                                   <Component id="jTextInRepairman" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                              <Component id="jTextInRepairRCost" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jTextInRepairRCost" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace pref="149" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonRepairClear" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -782,6 +790,13 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Repair Cost"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel54">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Purchase Date"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="jTextField1">
                     </Component>
                   </SubComponents>
                 </Container>
@@ -1030,7 +1045,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jButtonPropAdd" min="-2" pref="70" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                              <Component id="jButtonProbClear" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonPropClear" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -1045,7 +1060,7 @@
                               <Component id="jScrollPane2" min="-2" pref="458" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jButtonProbClear" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jButtonPropClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonPropAdd" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1071,7 +1086,7 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPropAddActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButtonProbClear">
+                    <Component class="javax.swing.JButton" name="jButtonPropClear">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Clear"/>
                         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -1084,6 +1099,9 @@
                           <Dimension value="null"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPropClearActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel6">
                       <Properties>
@@ -2502,7 +2520,7 @@
                                           <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jTextOutSearchSize" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                           <Component id="jLabel52" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jTextSearchMaxRent" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                                          <Component id="jTextOutSearchRent" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
                                           <Component id="jLabel53" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jButtonSearch" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -2549,7 +2567,7 @@
                                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                       <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="jTextSearchMaxRent" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextOutSearchRent" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jButtonSearch" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -2573,7 +2591,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea1">
+                        <Component class="javax.swing.JTextArea" name="jTAOutSearch">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="rows" type="int" value="5"/>
@@ -2701,7 +2719,7 @@
                     <Component class="javax.swing.JComboBox" name="jCBOutSearchCounty">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="new javax.swing.DefaultComboBoxModel(countyCB)" type="code"/>
+                          <Connection code="new javax.swing.DefaultComboBoxModel(countyCBNull)" type="code"/>
                         </Property>
                       </Properties>
                       <AuxValues>
@@ -2786,7 +2804,7 @@
                         <Property name="text" type="java.lang.String" value="Year Built"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jTextSearchMaxRent">
+                    <Component class="javax.swing.JTextField" name="jTextOutSearchRent">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel53">
                       <Properties>
