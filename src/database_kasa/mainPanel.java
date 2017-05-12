@@ -5,6 +5,14 @@
  */
 package database_kasa;
 import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.UIManager;
@@ -20,26 +28,294 @@ public class mainPanel extends javax.swing.JFrame {
      */
     @SuppressWarnings("empty-statement")
     public mainPanel() {
-        UIManager.getLookAndFeelDefaults().put("defaultFont", new Font("Arial", Font.PLAIN, 16));
-        String tenantSQL = "select name from tenant";
-        String propertySQL = "select address from property";
-        String ownerSQL = "select name from owner";
-        String repairSQL = "select date, address from repairs";
-        String repairCompanySQL = "select name from repairCompany";
-        String storeSQL = "select name, address from store";
-        
-        tenantCB= new String[]{"Alice"};
-        propertyCB = new String[]{"222 road"};
-        ownerCB = new String[]{"Bob"};
-        repairCB = new String[]{"05/12/13 2Road"};
-        repairCompanyCB  = new String[]{"Repair Co"};
-        storeCB = new String[]{"Home Depot, 123 street"};
-        countyCB = new String[]{"Montgomery", "Prince Georges"};
-        countyCBNull = new String[]{"", "Montgomery", "Prince Georges"};
-        payCB = new String[]{"2123 ow", "2123132 ss"};
-        initComponents(); 
+       
+        try {
+            UIManager.getLookAndFeelDefaults().put("defaultFont", new Font("Arial", Font.PLAIN, 16));
+            
+            
+            String driver="com.mysql.jdbc.Driver";
+            String url= "jdbc:mysql://triton.towson.edu:3360/aalmal5db";
+            String username ="aalmal5";
+            String password="Cosc*4q8j";
+            try {
+                Class.forName(driver);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(mainPanel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            conn = DriverManager.getConnection(url,username,password);
+            
+            updateCB();
+            
+            
+            
+            
+            initComponents(); 
+        } catch (SQLException ex) {
+            Logger.getLogger(mainPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
          
         
+    }
+  private void updateCB(){
+try{           
+            
+			Statement stmt = conn.createStatement();
+            String query = "SELECT * FROM Owner";
+            ResultSet rs = stmt.executeQuery(query); 
+            
+            ArrayList<String> namesCB1 = new ArrayList<String>();
+
+            while (rs.next())
+            {
+            	 String name = rs.getString("name");
+            	 namesCB1.add(name);	
+            }
+            
+            ownerCB = new String[namesCB1.size()];
+            
+            //copies the arrayList into the Array
+            for(int i = 0; i<namesCB1.size(); i++){
+            ownerCB[i] = namesCB1.get(i);
+            }
+                 }catch(Exception ex){	System.out.println(ex);
+  	        }
+		
+		
+
+		
+		///////// Tenant ///////
+		
+        try{           
+       Statement stmt = conn.createStatement();
+       String query = "SELECT * FROM Tenant";
+       ResultSet rs = stmt.executeQuery(query); 
+       ArrayList<String> tenantCB1 = new ArrayList<String>();
+       while (rs.next())
+       {
+       	 String name = rs.getString("name");
+       	 tenantCB1.add(name);	
+       }
+       
+       tenantCB = new String[tenantCB1.size()];
+       
+       //copies the arrayList into the Array
+       for(int i = 0; i<tenantCB1.size(); i++){
+    	   tenantCB[i] = tenantCB1.get(i);
+       }
+            }catch(Exception ex){	System.out.println(ex);
+	        }
+	
+	
+	/////////////
+        
+        
+        
+        
+        
+        
+///////// property ///////
+		
+        try{           
+       Statement stmt = conn.createStatement();
+       String query = "SELECT * FROM Property";
+       ResultSet rs = stmt.executeQuery(query); 
+       ArrayList<String> propertyCB1 = new ArrayList<String>();
+       while (rs.next())
+       {
+       	 String name = rs.getString("propertyID");
+       	propertyCB1.add(name);	
+       }
+       
+       propertyCB = new String[propertyCB1.size()];
+       
+       //copies the arrayList into the Array
+       for(int i = 0; i<propertyCB1.size(); i++){
+    	   propertyCB[i] = propertyCB1.get(i);
+       }
+            }catch(Exception ex){	System.out.println(ex);
+	        }
+	
+	
+	/////////////
+        
+        
+        
+        
+///////// Repair ///////
+		
+        try{           
+       Statement stmt = conn.createStatement();
+       String query = "SELECT * FROM Repair";
+       ResultSet rs = stmt.executeQuery(query); 
+       ArrayList<String> repairCB1 = new ArrayList<String>();
+       while (rs.next())
+       {
+       	 String name = rs.getString("repairID");
+       	repairCB1.add(name);	
+       }
+       
+       repairCB = new String[repairCB1.size()];
+       
+       //copies the arrayList into the Array
+       for(int i = 0; i<repairCB1.size(); i++){
+    	   repairCB[i] = repairCB1.get(i);
+       }
+            }catch(Exception ex){	System.out.println(ex);
+	        }
+	
+	
+	/////////////
+        
+        
+        
+        
+        
+        
+///////// Store ///////
+		
+        try{           
+       Statement stmt = conn.createStatement();
+       String query = "SELECT * FROM Store";
+       ResultSet rs = stmt.executeQuery(query); 
+       ArrayList<String> storeCB1 = new ArrayList<String>();
+       while (rs.next())
+       {
+       	 String name = rs.getString("store_name");
+       	String address = rs.getString("store_address");
+       	storeCB1.add(name + "; " + address);	
+       }
+       
+       storeCB = new String[storeCB1.size()+1];
+       storeCB[0] = null;
+       //copies the arrayList into the Array
+       for(int i = 0; i<storeCB1.size(); i++){
+    	   storeCB[i+1] = storeCB1.get(i);
+       }
+            }catch(Exception ex){	System.out.println(ex);
+	        }
+	
+	
+	/////////////
+        
+        
+       
+        
+        
+        
+        
+///////// County ///////
+		
+        try{           
+       Statement stmt = conn.createStatement();
+       String query = "SELECT * FROM County";
+       ResultSet rs = stmt.executeQuery(query); 
+       ArrayList<String> countyCB1 = new ArrayList<String>();
+       while (rs.next())
+       {
+    	   String name = rs.getString("countyID");
+       	countyCB1.add(name);	
+       }
+       
+       countyCB = new String[countyCB1.size()];
+       countyCBNull = new String[countyCB1.size()+1];
+       countyCBNull[0] = "";
+       
+       //copies the arrayList into the Array
+       for(int i = 0; i<countyCB1.size(); i++){
+    	   countyCB[i] = countyCB1.get(i);
+    	   countyCBNull[i+1] = countyCB1.get(i);
+       }
+       
+       //prints out the array
+            }catch(Exception ex){	System.out.println(ex);
+	        }
+	
+	
+	/////////////
+        
+        
+        
+        
+        
+///////// repairCompany ///////
+		
+        try{           
+       Statement stmt = conn.createStatement();
+       String query = "SELECT * FROM RepairCompany";
+       ResultSet rs = stmt.executeQuery(query); 
+       ArrayList<String> repairCompanyCB1 = new ArrayList<String>();
+       while (rs.next())
+       {
+       	 String name = rs.getString("RepairCompany");
+       	repairCompanyCB1.add(name);	
+       }
+       
+       repairCompanyCB = new String[repairCompanyCB1.size()];
+       
+       //copies the arrayList into the Array
+       for(int i = 0; i<repairCompanyCB1.size(); i++){
+    	   repairCompanyCB[i] = repairCompanyCB1.get(i);
+       }
+            }catch(Exception ex){	System.out.println(ex);
+	        }
+	
+	
+	///////////// 
+        
+        
+        
+        
+///////// Repair ///////
+		
+        try{           
+       Statement stmt = conn.createStatement();
+       String query = "SELECT * FROM Repair";
+       ResultSet rs = stmt.executeQuery(query); 
+       ArrayList<String> repairCB1 = new ArrayList<String>();
+       while (rs.next())
+       {
+       	 String name = rs.getString("property_propertyId");
+       	String date	 = rs.getString("repair_date");
+       	repairCB1.add(name + "; " +date);	
+       }
+       
+       repairCB = new String[repairCB1.size()];
+       
+       //copies the arrayList into the Array
+       for(int i = 0; i<repairCB1.size(); i++){
+    	   repairCB[i] = repairCB1.get(i);
+       }
+            }catch(Exception ex){	System.out.println(ex);
+	        }
+        ////////
+        
+///////// payment ///////
+		
+        try{           
+       Statement stmt = conn.createStatement();
+       String query = "SELECT * FROM RentPayment";
+       ResultSet rs = stmt.executeQuery(query); 
+       ArrayList<String> payCB1 = new ArrayList<String>();
+       while (rs.next())
+       {
+       	String name = rs.getString("tenant_tenantID");
+       	String dateM	 = rs.getString("tenant_payment_month");
+       	String dateY	 = rs.getString("tenant_payment_year");
+       	payCB1.add(name + "; " + dateM + "/" + dateY);	
+       }
+       rentPayLen = payCB1.size();
+       payCB = new String[payCB1.size()];
+       
+       //copies the arrayList into the Array
+       for(int i = 0; i<payCB1.size(); i++){
+    	   payCB[i] = payCB1.get(i);
+       }
+       
+            }catch(Exception ex){	System.out.println(ex);
+	        }
+        
+        
+        ////////
     }
 
     /**
@@ -52,6 +328,15 @@ public class mainPanel extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel7 = new javax.swing.JLabel();
+        jDialog1 = new javax.swing.JDialog();
+        jDialog2 = new javax.swing.JDialog();
+        jDialog3 = new javax.swing.JDialog();
+        jDialog4 = new javax.swing.JDialog();
+        jOptionPane1 = new javax.swing.JOptionPane();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
         jPanelMain = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPaneInput = new javax.swing.JTabbedPane();
@@ -106,7 +391,7 @@ public class mainPanel extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextInMDate = new javax.swing.JTextField();
         jPanelInStores = new javax.swing.JPanel();
         jButtonStoreAdd = new javax.swing.JButton();
         jButtonStoreClear = new javax.swing.JButton();
@@ -192,6 +477,8 @@ public class mainPanel extends javax.swing.JFrame {
         jTAOutTenantInfo = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTAOutTenantPay = new javax.swing.JTextArea();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
         jPanelOutProp = new javax.swing.JPanel();
         jCBOutProp = new javax.swing.JComboBox<>();
         jButtonOutPropLoad = new javax.swing.JButton();
@@ -200,12 +487,15 @@ public class mainPanel extends javax.swing.JFrame {
         jTAOutPropInfo = new javax.swing.JTextArea();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTAOutPropRepair = new javax.swing.JTextArea();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
         jPanelOutRepair = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         jCBOutRepair = new javax.swing.JComboBox<>();
         jButtonOutRepair = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTAOutRepair = new javax.swing.JTextArea();
+        jLabel59 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jCBOutOwner = new javax.swing.JComboBox<>();
         jLabel41 = new javax.swing.JLabel();
@@ -214,6 +504,8 @@ public class mainPanel extends javax.swing.JFrame {
         jTAOutOwnerInfo = new javax.swing.JTextArea();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTAOutOwnerPay = new javax.swing.JTextArea();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jCBOutPayM = new javax.swing.JComboBox<>();
         jCBOutPayY = new javax.swing.JComboBox<>();
@@ -243,8 +535,97 @@ public class mainPanel extends javax.swing.JFrame {
         jTextOutSearchRent = new javax.swing.JTextField();
         jLabel53 = new javax.swing.JLabel();
         jButtonSearch = new javax.swing.JButton();
+        jLabel62 = new javax.swing.JLabel();
 
         jLabel7.setText("jLabel7");
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
+        jDialog2.getContentPane().setLayout(jDialog2Layout);
+        jDialog2Layout.setHorizontalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog2Layout.setVerticalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog3Layout = new javax.swing.GroupLayout(jDialog3.getContentPane());
+        jDialog3.getContentPane().setLayout(jDialog3Layout);
+        jDialog3Layout.setHorizontalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog3Layout.setVerticalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
+        jDialog4.getContentPane().setLayout(jDialog4Layout);
+        jDialog4Layout.setHorizontalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog4Layout.setVerticalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -576,7 +957,7 @@ public class mainPanel extends javax.swing.JFrame {
                                     .addComponent(jLabel35)
                                     .addComponent(jCBInRepairStore, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextInMDate, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jTextInRepairMCost, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addGap(0, 64, Short.MAX_VALUE))))
@@ -618,7 +999,7 @@ public class mainPanel extends javax.swing.JFrame {
                 .addGap(1, 1, 1)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextInRepairRCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextInMDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRepairClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -720,6 +1101,11 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonRCClear.setMaximumSize(new java.awt.Dimension(70, 29));
         jButtonRCClear.setMinimumSize(new java.awt.Dimension(70, 29));
         jButtonRCClear.setPreferredSize(null);
+        jButtonRCClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRCClearActionPerformed(evt);
+            }
+        });
 
         jLabel27.setText("Company Name");
 
@@ -785,8 +1171,6 @@ public class mainPanel extends javax.swing.JFrame {
         });
 
         jLabel6.setText("Address");
-
-        jPanelInProp.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel8.setText("Address");
 
@@ -982,8 +1366,8 @@ public class mainPanel extends javax.swing.JFrame {
         jPanelInPropertyLayout.setVerticalGroup(
             jPanelInPropertyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInPropertyLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelInPropertyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonPropClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonPropAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1006,6 +1390,11 @@ public class mainPanel extends javax.swing.JFrame {
         jButtonTenantClear.setMaximumSize(new java.awt.Dimension(70, 29));
         jButtonTenantClear.setMinimumSize(new java.awt.Dimension(70, 29));
         jButtonTenantClear.setPreferredSize(null);
+        jButtonTenantClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTenantClearActionPerformed(evt);
+            }
+        });
 
         jCBInTenantProperty.setModel(new javax.swing.DefaultComboBoxModel(propertyCB));
 
@@ -1151,6 +1540,10 @@ public class mainPanel extends javax.swing.JFrame {
         jTAOutTenantPay.setRows(5);
         jScrollPane5.setViewportView(jTAOutTenantPay);
 
+        jLabel55.setText("Tenant Info");
+
+        jLabel56.setText("Rent Payment History");
+
         javax.swing.GroupLayout jPanelOutTenantLayout = new javax.swing.GroupLayout(jPanelOutTenant);
         jPanelOutTenant.setLayout(jPanelOutTenantLayout);
         jPanelOutTenantLayout.setHorizontalGroup(
@@ -1162,9 +1555,11 @@ public class mainPanel extends javax.swing.JFrame {
                     .addGroup(jPanelOutTenantLayout.createSequentialGroup()
                         .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jCBOutTenantName, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel55))
                         .addGap(75, 75, 75)
                         .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel56)
                             .addComponent(jButtonOutTenantLoad)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(82, Short.MAX_VALUE))
@@ -1178,7 +1573,11 @@ public class mainPanel extends javax.swing.JFrame {
                 .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCBOutTenantName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonOutTenantLoad))
-                .addGap(65, 65, 65)
+                .addGap(44, 44, 44)
+                .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(jLabel56))
+                .addGap(1, 1, 1)
                 .addGroup(jPanelOutTenantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
                     .addComponent(jScrollPane4))
@@ -1208,6 +1607,10 @@ public class mainPanel extends javax.swing.JFrame {
         jTAOutPropRepair.setRows(5);
         jScrollPane6.setViewportView(jTAOutPropRepair);
 
+        jLabel57.setText("Property Info");
+
+        jLabel58.setText("Repair History");
+
         javax.swing.GroupLayout jPanelOutPropLayout = new javax.swing.GroupLayout(jPanelOutProp);
         jPanelOutProp.setLayout(jPanelOutPropLayout);
         jPanelOutPropLayout.setHorizontalGroup(
@@ -1226,7 +1629,10 @@ public class mainPanel extends javax.swing.JFrame {
                                 .addComponent(jButtonOutPropLoad))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelOutPropLayout.createSequentialGroup()
                                 .addGap(41, 41, 41)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel58)
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(jLabel57))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanelOutPropLayout.setVerticalGroup(
@@ -1238,7 +1644,11 @@ public class mainPanel extends javax.swing.JFrame {
                 .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCBOutProp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonOutPropLoad))
-                .addGap(65, 65, 65)
+                .addGap(44, 44, 44)
+                .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel57)
+                    .addComponent(jLabel58))
+                .addGap(1, 1, 1)
                 .addGroup(jPanelOutPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
                     .addComponent(jScrollPane3))
@@ -1263,6 +1673,8 @@ public class mainPanel extends javax.swing.JFrame {
         jTAOutRepair.setRows(5);
         jScrollPane7.setViewportView(jTAOutRepair);
 
+        jLabel59.setText("Repair Info");
+
         javax.swing.GroupLayout jPanelOutRepairLayout = new javax.swing.GroupLayout(jPanelOutRepair);
         jPanelOutRepair.setLayout(jPanelOutRepairLayout);
         jPanelOutRepairLayout.setHorizontalGroup(
@@ -1276,7 +1688,8 @@ public class mainPanel extends javax.swing.JFrame {
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
                             .addComponent(jCBOutRepair, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(83, 83, 83)
-                        .addComponent(jButtonOutRepair)))
+                        .addComponent(jButtonOutRepair))
+                    .addComponent(jLabel59))
                 .addContainerGap(141, Short.MAX_VALUE))
         );
         jPanelOutRepairLayout.setVerticalGroup(
@@ -1288,7 +1701,9 @@ public class mainPanel extends javax.swing.JFrame {
                 .addGroup(jPanelOutRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCBOutRepair, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonOutRepair))
-                .addGap(65, 65, 65)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel59)
+                .addGap(0, 0, 0)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(246, Short.MAX_VALUE))
         );
@@ -1316,6 +1731,10 @@ public class mainPanel extends javax.swing.JFrame {
         jTAOutOwnerPay.setRows(5);
         jScrollPane8.setViewportView(jTAOutOwnerPay);
 
+        jLabel60.setText("Owner Info");
+
+        jLabel61.setText("Members of Group");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -1335,7 +1754,12 @@ public class mainPanel extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                         .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(82, 82, 82))))
+                        .addGap(82, 82, 82))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel60)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel61)
+                        .addGap(116, 116, 116))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1346,7 +1770,11 @@ public class mainPanel extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCBOutOwner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonOutOwner))
-                .addGap(65, 65, 65)
+                .addGap(44, 44, 44)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60)
+                    .addComponent(jLabel61))
+                .addGap(1, 1, 1)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
                     .addComponent(jScrollPane1))
@@ -1450,7 +1878,7 @@ public class mainPanel extends javax.swing.JFrame {
 
         jCBOutSearchType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Condo", "Townhouse", "Single Family" }));
 
-        jLabel51.setText("Size");
+        jLabel51.setText("Minimum Size");
 
         jLabel52.setText("Year Built");
 
@@ -1462,6 +1890,8 @@ public class mainPanel extends javax.swing.JFrame {
                 jButtonSearchActionPerformed(evt);
             }
         });
+
+        jLabel62.setText("Matched Properties");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -1494,17 +1924,21 @@ public class mainPanel extends javax.swing.JFrame {
                             .addComponent(jButtonSearch))
                         .addGap(0, 64, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel62))
                 .addGap(49, 49, 49))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel51)
+                    .addComponent(jLabel62))
+                .addGap(0, 0, 0)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel51)
-                        .addGap(0, 0, 0)
                         .addComponent(jTextOutSearchSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(jLabel52)
@@ -1530,11 +1964,9 @@ public class mainPanel extends javax.swing.JFrame {
                         .addComponent(jLabel53)
                         .addGap(0, 0, 0)
                         .addComponent(jTextOutSearchRent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(54, 54, 54)
                         .addComponent(jButtonSearch))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
@@ -1571,9 +2003,15 @@ public class mainPanel extends javax.swing.JFrame {
         int bedNum = jCBInPropertyBed.getSelectedIndex();
         int bathNum = jCBInPropertyBath.getSelectedIndex();
         //Inserts data into property table
-        String query = "INSERT into property VALUES(\"" + propName + "\", \"" + propCity
+        String query = "INSERT into Property VALUES(\"" + propName + "\", \"" + propCity
                 +"\", \"" + propZip+ "\", " + ownerID +", " + size + ", " + year
                 +", \""+ county + "\", " + bedNum +", " + bathNum +");";
+        try{           
+            Statement stmt = conn.createStatement();
+            stmt.execute(query); 
+                 }catch(Exception ex){	System.out.println(ex);
+     	        }
+
         System.out.println(query);
         int type =  jCBInPropertyType.getSelectedIndex();
         String var1 = jTextInPropertyVar1.getText();
@@ -1593,24 +2031,60 @@ public class mainPanel extends javax.swing.JFrame {
             query = "INSERT into SingleFamilyHouse VALUES(\"" + propName + "\", \"" + var1
                     + "\", \"" + var2 + "\");";
             System.out.println(query);
+            try{           
+                Statement stmt = conn.createStatement();
+                stmt.execute(query); 
+                     }catch(Exception ex){	System.out.println(ex);
+         	        }
+
         }
+        int rS =  jCBInPropertyRS.getSelectedIndex();
+        String var4 = jTextInPropertyVar4.getText();
+        String var5 = jTextInPropertyVar5.getText();
+        String var6 = jTextInPropertyVar6.getText();
+        //Inserts data into rental or sale
+        if (rS == 0){
+            query = "INSERT into Rental VALUES(\"" + propName + "\", \"" + var4
+                    + "\", \"" + var5+ "\", \"" + var6+ "\");";
+            System.out.println(query);
+        }
+        if (rS == 1){
+            query = "INSERT into Sale VALUES(\"" + propName + "\", \"" + var4
+                    + "\", \"" + var5+ "\", \"" + var6+ "\");";
+            System.out.println(query);
+        }
+        try{           
+            Statement stmt = conn.createStatement();
+            stmt.execute(query); 
+                 }catch(Exception ex){	System.out.println(ex);
+     	        }
         
     }//GEN-LAST:event_jButtonPropAddActionPerformed
 
     private void jButtonStoreAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoreAddActionPerformed
         // Add Store Button
+    	int len = storeCB.length;
         String storeName = jTextInStoreName.getText();
         String storeAddress = jTextInStoreAddress.getText();
         String storePhone = jTextInStorePhone.getText();
-        String query = "INSERT into Store VALUES(\"" + storeName + "\", \"" + storeAddress
+        String query = "INSERT into Store VALUES("+len+ ", \"" + storeName + "\", \"" + storeAddress
                     + "\", \"" + storePhone + "\");";
+        try{           
+            Statement stmt = conn.createStatement();
+            stmt.execute(query); 
+            jButtonStoreClearActionPerformed(null);
+                 }catch(Exception ex){	System.out.println(ex);
+     	        }
+
         System.out.println(query);
-        jButtonStoreClearActionPerformed(null);
+        
     }//GEN-LAST:event_jButtonStoreAddActionPerformed
 
     private void jButtonPayAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPayAddActionPerformed
         // Add payment button
-        int paymentId = payCB.length;
+       // Add payment button
+        
+        int tenantId = jCBInPayTenant.getSelectedIndex();
         String propName = jCBInPayProperty.getSelectedItem().toString();
         String tenantName = jCBInPayTenant.getSelectedItem().toString();
         int tenantPay = Integer.parseInt(jTextInPayTenant.getText());
@@ -1620,12 +2094,17 @@ public class mainPanel extends javax.swing.JFrame {
         int tYear =  jCBInPayTY.getSelectedIndex()+2010;
         int oYear =  jCBInPayOY.getSelectedIndex()+2010;
         
-        String query = "INSERT into RentPayment VALUES(" +paymentId + ", \"" + tenantName +
-                "\", " + tenantPay + ", " + tMonth + ", " + tYear + ", " +
+        String query = "INSERT into RentPayment VALUES(" +rentPayLen + ", " + tenantId +
+                ", " + tenantPay + ", " + tMonth + ", " + tYear + ", " +
                 ownerPay + ", " + oMonth + ", " + oYear + ", \"" + propName + "\");";
         System.out.println(query);
-        
-        jButtonPayClearActionPerformed(null);
+        try{           
+            Statement stmt = conn.createStatement();
+            stmt.execute(query); 
+            updateCB();
+            jButtonPayClearActionPerformed(null);
+                 }catch(Exception ex){	System.out.println(ex);
+     	        }
     }//GEN-LAST:event_jButtonPayAddActionPerformed
 
     private void jButtonTenantAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTenantAddActionPerformed
@@ -1645,6 +2124,15 @@ public class mainPanel extends javax.swing.JFrame {
                 "\", \"" + tenantEmail + "\", \"" + tenantPhone + "\", " +
                 tenantDep + ", \"" + propertyID + "\", " + startM + ", " + startY +
                 ", " + endM+ ", " + endY+ ");";
+        try{           
+            Statement stmt = conn.createStatement();
+            stmt.execute(query); 
+            updateCB();
+            new AddSuccess().setVisible(true);
+            jButtonTenantClearActionPerformed(null);
+                 }catch(Exception ex){	System.out.println(ex);
+     	        }
+
         System.out.println(query);
     }//GEN-LAST:event_jButtonTenantAddActionPerformed
 
@@ -1652,25 +2140,37 @@ public class mainPanel extends javax.swing.JFrame {
         // Add owner to group button
         int ownerAddId = (jCBInOGOwner.getSelectedIndex());
         int ownerGroupId = (jCBInOGGroup.getSelectedIndex());
-        //String findOwnerID = "Select ownerID from owner where name = \"" +ownerAdd+"\"";
-        //String findGroupID = "Select ownerID from owner where name = \"" +ownerGroup+"\"";
-        //System.out.println(findOwnerID + "\n" + findGroupID);
-        String query = "INSERT into OwnerGroup VALUES(" +ownerAddId + ", " + ownerGroupId+");";
+        String query = "INSERT into Ownergroup VALUES(" +ownerAddId + ", " + ownerGroupId+");";
         System.out.println(query);
+        try{           
+            Statement stmt = conn.createStatement();
+            stmt.execute(query); 
+            updateCB();
+            new AddSuccess().setVisible(true);
+                 }catch(Exception ex){	System.out.println(ex);
+     	        }
+        
     }//GEN-LAST:event_jButtonOGAddActionPerformed
 
     private void jButtonOwnerAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOwnerAddActionPerformed
         // Add owner button
-        String ownerId = Integer.toString(ownerCB.length);
+         String ownerId = Integer.toString(ownerCB.length);
         String ownerName = jTextInOwnerName.getText();
         String ownerPhone = jTextInOwnerPhoneNum.getText();
         String ownerEmail = jTextInOwnerEmail.getText();
         String query = "INSERT into Owner VALUES(" +ownerId + ", \"" + ownerName +
-                "\", \"" + ownerEmail + "\", \"" + ownerPhone + "\", " +
-                ");";
+                "\", \"" + ownerEmail + "\", \"" + ownerPhone + "\");";
+         try{           
+            Statement stmt = conn.createStatement();
+            stmt.execute(query); 
+            updateCB();
+            new AddSuccess().setVisible(true);
+            jButtonOwnerClearActionPerformed(null); 
+                 }catch(Exception ex){	System.out.println(ex);
+     	        }
+        
         System.out.println(query);
         
-        jButtonOwnerClearActionPerformed(null); 
     }//GEN-LAST:event_jButtonOwnerAddActionPerformed
 
     private void jCBInPropertyRSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBInPropertyRSActionPerformed
@@ -1698,7 +2198,17 @@ public class mainPanel extends javax.swing.JFrame {
         String rCPhone = jTextInRCPhone.getText();
         
         String query = "INSERT into RepairCompany VALUES(" +rCId + ", \"" + rCName +
-                "\", \"" + rCPhone + "\", " +");";
+                "\", \"" + rCPhone + "\");";
+        try{           
+            Statement stmt = conn.createStatement();
+            stmt.execute(query); 
+            updateCB();
+            jButtonRCClearActionPerformed(null);
+            new AddSuccess().setVisible(true);
+                 }catch(Exception ex){	System.out.println(ex);
+     	        }
+       
+
         System.out.println(query);
     }//GEN-LAST:event_jButtonRCAddActionPerformed
 
@@ -1725,47 +2235,41 @@ public class mainPanel extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_jCBInPropertyTypeActionPerformed
 
-    private void jButtonOutTenantLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutTenantLoadActionPerformed
-        // Loads tenant information
-        int tenantId = jCBOutTenantName.getSelectedIndex();
-        String tenantName = jCBOutTenantName.getSelectedItem().toString();
-        String tenantInfo = "Info";
-        jTAOutTenantInfo.setText(tenantInfo);
-        String getTenantInfo = "Select * from tenant where tenantId = " +tenantId+");";
-        jTAOutTenantPay.setText(getTenantInfo);
-    }//GEN-LAST:event_jButtonOutTenantLoadActionPerformed
-
-    private void jButtonOutPropLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutPropLoadActionPerformed
-        // Loads property Information
-        String propName = jCBOutProp.getSelectedItem().toString();
-        String propInfo = "Select * from property where propertyId = \"" +propName+"\"";;
-        jTAOutPropInfo.setText(propInfo);
-        String getRepairs = "Select repairID from repair where propertyId = \"" +propName+"\"";
-        jTAOutPropRepair.setText(getRepairs);
-    }//GEN-LAST:event_jButtonOutPropLoadActionPerformed
-
     private void jButtonRepairAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRepairAddActionPerformed
-        // add repair records button
+         // add repair records button
         int repairId = repairCB.length;
         String propName = jCBInRepairProperty.getSelectedItem().toString();
         int month = Integer.parseInt(jTextInRepairDateM.getText());
         int day = Integer.parseInt(jTextInRepairDateD.getText());
         int year = Integer.parseInt(jTextInRepairDateY.getText());
-        String rDate = "1";
-        String repairCompany = jCBInRepairRC.getSelectedItem().toString();
+        String rDate = month + "-" + day + "-" + year;
+        int repairCompany = jCBInRepairRC.getSelectedIndex();
         String repairmanName = jTextInRepairman.getText();
-        String store = jCBInRepairStore.getSelectedItem().toString();
-        String mDate = "1";
+        int store = jCBInRepairStore.getSelectedIndex()-1;
+        String mDate =jTextInMDate.getText();
         float rCost = Float.parseFloat(jTextInRepairRCost.getText());
-        float mCost = Float.parseFloat(jTextInRepairMCost.getText());
-        
-        String query = "INSERT into RepairCompany VALUES(" +repairId + ", \"" + propName +
-                "\", " +rCost +", " + rDate + ", \"" + repairCompany + "\", \"" 
-                + repairmanName +"\", " + mCost + ", " +mDate + ", \""+
-                store + "\");";
+        float mCost = 0;
+        if(!jTextInRepairMCost.getText().isEmpty()){
+                mCost = Float.parseFloat(jTextInRepairMCost.getText());
+        }
+        String query = "INSERT into Repair VALUES(" +repairId + ", \"" + propName +
+                "\", " +rCost +", \"" + rDate + "\", " + repairCompany + ", \"" 
+                + repairmanName +"\", " + mCost + ", \"" +mDate + "\"";
+        if (store >= 0){
+            query+= ", "+store + ");";
+        }
+        else{query+=", "+ null + ");";} 
+        try{           
+            Statement stmt = conn.createStatement();
+            stmt.execute(query); 
+            updateCB();
+            new AddSuccess().setVisible(true);
+            jButtonRepairClearActionPerformed(null);
+                 }catch(Exception ex){	System.out.println(ex);
+     	        }
         System.out.println(query);
+
         
-        jButtonRepairClearActionPerformed(null);
     }//GEN-LAST:event_jButtonRepairAddActionPerformed
 
     private void jButtonOwnerClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOwnerClearActionPerformed
@@ -1798,97 +2302,6 @@ public class mainPanel extends javax.swing.JFrame {
         jTextInStorePhone.setText(null);
     }//GEN-LAST:event_jButtonStoreClearActionPerformed
 
-    private void jButtonOutOwnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutOwnerActionPerformed
-        // Loads owner information
-        int ownerId = jCBOutOwner.getSelectedIndex();
-        String ownerName = jCBOutOwner.getSelectedItem().toString();
-        String ownerInfo = "Info";
-        jTAOutOwnerInfo.setText(ownerInfo);
-        String query = "Select * from owner where ownerID = " +ownerId+");";
-        jTAOutOwnerPay.setText(query);
-    }//GEN-LAST:event_jButtonOutOwnerActionPerformed
-
-    private void jButtonOutRepairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutRepairActionPerformed
-        // Loads repair information
-        int repairId = jCBOutRepair.getSelectedIndex();
-        String repair = jCBOutRepair.getSelectedItem().toString();
-        String repairInfo = "Info";
-        String query = "Select * FROM Repair WHERE repairId = " + repairId + ");";
-        jTAOutRepair.setText(query);
-    }//GEN-LAST:event_jButtonOutRepairActionPerformed
-
-    private void jButtonOutPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutPayActionPerformed
-        // Loads tenants who paid rent and those who didnt
-        int month = jCBOutPayM.getSelectedIndex()+1;
-        int year  = jCBOutPayY.getSelectedIndex()+2010;
-        int absoluteDate = year*12+month;
-        String query = "Select tenantName"
-                + "From Tenant"
-                + "Where"
-                + "tenantID IN"
-                + "(Select tenantID FROM RentPayment where "
-                    + " Tenantpaymentmonth = " + month 
-                    + " AND Tenantpaymentyear= " + year+")"
-                + " AND Monthstartrent+ Yearstartrent*12 < " +absoluteDate
-                + " AND Monthendrent+ Yearendrent*12 > " + absoluteDate +");";
-        jTAOutPayPaid.setText(query);
-        
-        query = "Select tenantName"
-                + " From Tenant"
-                + " Where"
-                + " tenantID NOT IN"
-                + " (Select tenantID FROM RentPayment where "
-                    + "Tenantpaymentmonth = " + month 
-                    + " AND Tenantpaymentyear= " + year+")"
-                + " AND Monthstartrent+ Yearstartrent*12 < " +absoluteDate
-                + " AND Monthendrent+ Yearendrent*12 > " + absoluteDate +");";
-        jTAOutPayNP.setText(query);
-
-    }//GEN-LAST:event_jButtonOutPayActionPerformed
-
-    private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
-        // Loads rental properties that match the search criteria
-        int size=0;
-        String county = "";
-        int price =Integer.MAX_VALUE;
-        if (!jTextOutSearchSize.getText().isEmpty()){
-            size = Integer.parseInt(jTextOutSearchSize.getText());
-        }
-        int year = jCBOutSearchYear.getSelectedIndex() + 1917;
-        county = jCBOutSearchCounty.getSelectedItem().toString();
-        int bedNum = jCBOutSearchBed.getSelectedIndex();
-        int bathNum = jCBOutSearchBath.getSelectedIndex();
-        if (!jTextOutSearchRent.getText().isEmpty()){
-            price = Integer.parseInt(jTextOutSearchRent.getText());
-        }
-        int type = jCBOutSearchType.getSelectedIndex();
-        String query = "Select propertyID "
-                + "FROM property p, rental r "
-                + "Where"
-                + " p.size > " + size
-                + " AND p.year >" + year
-                + " AND p.number_of_bedrooms >"+ bedNum
-                + " AND p.number_of_bathrooms >"+ bathNum
-                + " AND r.price <" + price
-                + " AND p.propertyID = r.propertyID";
-        if(county != ""){
-           query = query + " AND p.county = \"" + county +"\"";  
-        }
-        switch (type) {
-            case 0 : query+=" And p.propertyID IN (Select propertyID from Condo)";
-            break;
-            
-            case 1 : query+=" And p.propertyID IN (Select propertyID from TownHouse)";
-            break;
-            
-            case 2 : query+=" And p.propertyID IN (Select propertyID from SingleFamilyHouse)";
-            break;
-        }
-        query+=");";
-        jTAOutSearch.setText(query);
-    
-    }//GEN-LAST:event_jButtonSearchActionPerformed
-
     private void jButtonPropClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPropClearActionPerformed
         // TODO add your handling code here:
         jTextInPropertyAddress.setText("");
@@ -1907,6 +2320,307 @@ public class mainPanel extends javax.swing.JFrame {
         jTextInPropertyVar5.setText("");
         jTextInPropertyVar6.setText("");
     }//GEN-LAST:event_jButtonPropClearActionPerformed
+
+    private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
+        // Loads rental properties that match the search criteria
+        int size=0;
+        String county = "";
+        int price =Integer.MAX_VALUE;
+        if (!jTextOutSearchSize.getText().isEmpty()){
+            size = Integer.parseInt(jTextOutSearchSize.getText());
+        }
+        int year = jCBOutSearchYear.getSelectedIndex() + 1917;
+        county = jCBOutSearchCounty.getSelectedItem().toString();
+        int bedNum = jCBOutSearchBed.getSelectedIndex();
+        int bathNum = jCBOutSearchBath.getSelectedIndex();
+        if (!jTextOutSearchRent.getText().isEmpty()){
+            price = Integer.parseInt(jTextOutSearchRent.getText());
+        }
+        int type = jCBOutSearchType.getSelectedIndex();
+        String query = "Select propertyID"
+        + " FROM Property p, Rental r"
+        + " Where "
+        + " p.size >= " + size
+        + " AND p.year >=" + year
+        + " AND p.number_of_bedrooms >="+ bedNum
+        + " AND p.number_of_bathrooms >="+ bathNum
+        + " AND r.rental_price <" + price
+        + " AND p.propertyID = r.Property_propertyID";
+        if(county != ""){
+            query = query + " AND p.County_countryID = \"" + county +"\"";
+        }
+
+        switch (type) {
+            case 0 : query+=" And p.propertyID IN (Select Property_propertyID from Condo)";
+            break;
+
+            case 1 : query+=" And p.propertyID IN (Select Property_propertyID from Townhouse)";
+            break;
+
+            case 2 : query+=" And p.propertyID IN (Select Property_propertyID from SingleFamilyHouse)";
+            break;
+        }
+        query+=";";
+        jTAOutSearch.setText("");
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                jTAOutSearch.append(rs.getString("propertyID")+ "\n");
+
+            }
+        }catch(Exception ex){	System.out.println(ex);
+        }
+
+    }//GEN-LAST:event_jButtonSearchActionPerformed
+
+    private void jButtonOutPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutPayActionPerformed
+        // Loads tenants who paid rent and those who didnt
+        
+        int month = jCBOutPayM.getSelectedIndex()+1;
+        int year  = jCBOutPayY.getSelectedIndex()+2010;
+        int absoluteDate = year*12+month;
+        String query = "Select name"
+        + " From Tenant"
+        + " Where"
+        + " tenantID IN"
+        + " (Select Tenant_tenantID FROM RentPayment where"
+        + " Tenant_payment_month = " + month
+        + " AND Tenant_payment_year = " + year+")"
+        + " AND Month_start_rent+ Year_start_rent * 12 <= " +absoluteDate
+        + " AND Month_end_rent+ Year_end_rent * 12 >= " + absoluteDate +";";
+        jTAOutPayPaid.setText("");
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                jTAOutPayPaid.append(rs.getString("name")+"\n");
+
+            }
+        }catch(Exception ex){	System.out.println(ex);
+        }
+
+        query = "Select name"
+        + " From Tenant"
+        + " Where"
+        + " tenantID NOT IN"
+        + " (Select Tenant_tenantID FROM RentPayment where "
+        + " Tenant_payment_month = " + month
+        + " AND Tenant_payment_year= " + year+")"
+        + " AND Month_start_rent+ Year_start_rent * 12 < " +absoluteDate
+        + " AND Month_end_rent+ Year_end_rent * 12 > " + absoluteDate +";";
+        jTAOutPayNP.setText("");
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                jTAOutPayNP.append(rs.getString("name")+"\n");
+
+            }
+        }catch(Exception ex){	System.out.println(ex);
+        }
+
+    }//GEN-LAST:event_jButtonOutPayActionPerformed
+
+    private void jButtonOutOwnerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutOwnerActionPerformed
+        // Loads owner information
+        int ownerId = jCBOutOwner.getSelectedIndex();
+        String ownerName = jCBOutOwner.getSelectedItem().toString();
+        String ownerInfo = "Info";
+
+        String query = "Select * from Owner where ownerID = " +ownerId+";";
+        jTAOutOwnerPay.setText(query);
+        String name = "";
+        String email = "";
+        String phone = "";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                name = rs.getString("name");
+                email = rs.getString("email");
+                phone = rs.getString("phone");
+            }
+            jTAOutOwnerInfo.setText(name + " email:" + email + " phone:" + phone);
+
+        }catch(Exception ex){	System.out.println(ex);
+        }
+        query = "Select * from Ownergroup g, Owner o where g.groupID = " +ownerId+" And g.ownerID = o.ownerID;";
+        name ="";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                name += rs.getString("name")+"\n";
+
+            }
+            jTAOutOwnerPay.setText(name);
+
+        }catch(Exception ex){	System.out.println(ex);
+        }
+    }//GEN-LAST:event_jButtonOutOwnerActionPerformed
+
+    private void jButtonOutRepairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutRepairActionPerformed
+        // Loads repair information
+        int repairId = jCBOutRepair.getSelectedIndex();
+        String repair = jCBOutRepair.getSelectedItem().toString();
+        String repairInfo = "Info";
+        String query = "Select * FROM Repair WHERE repairID = " + repairId + ";";
+        String address = "";
+        String rcost = "";
+        String rdate = "";
+        String repairC = "";
+        String repairman = "";
+        String mcost = "";
+        String mdate = "";
+        String store = "";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                address = rs.getString("Property_propertyID");
+                repairC = rs.getString("repair_company");
+                repairman = rs.getString("repairman_name");
+                rcost = rs.getString("repair_cost");
+                mcost = rs.getString("materical_cost");
+                rdate = rs.getString("repair_date");
+                mdate = rs.getString("materical_purchase_date");
+                store = storeCB[Integer.parseInt(rs.getString("store_purchased"))];
+
+            }
+        }catch(Exception ex){	System.out.println(ex);
+        }
+        jTAOutRepair.setText(address + "\n repaired by " + repairman + " from " + repairC+ " on\n"
+            + rdate + "\n Cost: " + rcost+"\n Materials:" + mcost + " bought " + mdate
+            + " at\n" + store);
+    }//GEN-LAST:event_jButtonOutRepairActionPerformed
+
+    private void jButtonOutPropLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutPropLoadActionPerformed
+        // Loads property Information
+        String propName = jCBOutProp.getSelectedItem().toString();
+        String query  = "Select * from Property where propertyID = \"" +propName+"\";";
+        String address = "";
+        String size = "";
+        String city = "";
+        String zip = "";
+        String county = "";
+        String bathNo = "";
+        String bedNo = "";
+        String year = "";
+
+        jTAOutTenantPay.setText("");
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                address = rs.getString("propertyID");
+                city = rs.getString("City");
+                zip = rs.getString("zip code");
+                year = rs.getString("year");
+                county = rs.getString("County_countryID");
+                size = rs.getString("size");
+
+            }
+
+        }catch(Exception ex){	System.out.println(ex);
+        }
+        String propInfo = address + ", " + city + ", " + zip +"\n"
+        + "built in " + year + "\nin " + county+ "\nsize " + size;
+        jTAOutPropInfo.setText(propInfo);
+        query  = "Select * from Repair where Property_propertyID = \"" +propName+"\";";
+        jTAOutPropRepair.setText("");
+        String cost = "";
+        String date = "";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+
+                float rcost = Float.parseFloat(rs.getString("repair_cost"));
+                float mcost = Float.parseFloat(rs.getString("materical_cost"));
+                cost = Float.toString(rcost + mcost);
+                date = rs.getString("repair_date");
+                jTAOutPropRepair.append("on " + date+ " $" + cost+"\n");
+
+            }
+        }catch(Exception ex){	System.out.println(ex);
+        }
+
+    }//GEN-LAST:event_jButtonOutPropLoadActionPerformed
+
+    private void jButtonOutTenantLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOutTenantLoadActionPerformed
+        // Loads tenant information
+        int tenantId = jCBOutTenantName.getSelectedIndex();
+
+        String query = "Select * from Tenant where tenantId = " +tenantId+";";
+        String name = "";
+        String phone = "";
+        String email = "";
+        String prop = "";
+        String months = "";
+        String years = "";
+        String monthe = "";
+        String yeare = "";
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                name = rs.getString("name");
+                email = rs.getString("email");
+                phone = rs.getString("phone");
+                prop = rs.getString("propertyID");
+                months = rs.getString("Month_start_rent");
+                years = rs.getString("Year_start_rent");
+                monthe = rs.getString("Month_end_rent");
+                yeare = rs.getString("Year_end_rent");
+            }
+            jTAOutTenantInfo.setText(name + "\n email: " + email + "\n phone: " + phone +"\n renting: " + prop+
+                "\n from " + months+ "/" + years
+                +"\n to " +monthe + "/"+ yeare);
+
+        }catch(Exception ex){	System.out.println(ex);
+        }
+        query = "Select * from RentPayment where Tenant_tenantId = " +tenantId+";";
+        String pay = "";
+        String month = "";
+        String year = "";
+        jTAOutTenantPay.setText("");
+        try{
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next())
+            {
+                pay = rs.getString("tenant_payment_amount");
+                month = rs.getString("tenant_payment_month");
+                year = rs.getString("tenant_payment_year");
+                jTAOutTenantPay.append(month + "/"+ year +" amount: $" + pay +"\n");
+            }
+        }catch(Exception ex){	System.out.println(ex);
+        }
+    }//GEN-LAST:event_jButtonOutTenantLoadActionPerformed
+
+    private void jButtonRCClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRCClearActionPerformed
+        // TODO add your handling code here:
+       jTextInRCName.setText("");
+       jTextInRCPhone.setText("");
+    }//GEN-LAST:event_jButtonRCClearActionPerformed
+
+    private void jButtonTenantClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTenantClearActionPerformed
+        // TODO add your handling code here:
+        jTextInTenantName.setText("");
+        jTextInTenantEmail.setText("");
+        jTextInTenantPhone.setText("");
+       
+    }//GEN-LAST:event_jButtonTenantClearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2002,6 +2716,10 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jCBOutSearchType;
     private javax.swing.JComboBox<String> jCBOutSearchYear;
     private javax.swing.JComboBox<String> jCBOutTenantName;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
+    private javax.swing.JDialog jDialog3;
+    private javax.swing.JDialog jDialog4;
     private javax.swing.JLabel jLabeTlPN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2053,17 +2771,30 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelRC;
+    private javax.swing.JOptionPane jOptionPane1;
     private javax.swing.JTabbedPane jPaneInput;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel jPanelInOwner;
     private javax.swing.JPanel jPanelInOwnerGroup;
     private javax.swing.JPanel jPanelInPayment;
@@ -2099,7 +2830,7 @@ public class mainPanel extends javax.swing.JFrame {
     private javax.swing.JTextArea jTAOutTenantInfo;
     private javax.swing.JTextArea jTAOutTenantPay;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextInMDate;
     private javax.swing.JTextField jTextInOwnerEmail;
     private javax.swing.JTextField jTextInOwnerName;
     private javax.swing.JTextField jTextInOwnerPhoneNum;
@@ -2147,4 +2878,6 @@ public class mainPanel extends javax.swing.JFrame {
     private String[] countyCB;
     private String[] countyCBNull;
     private String[] payCB;
+    public Connection conn;
+    int rentPayLen;
 }
