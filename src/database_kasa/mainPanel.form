@@ -129,6 +129,11 @@
         </DimensionLayout>
       </Layout>
     </Container>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton1"/>
+      </Properties>
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -337,11 +342,11 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="jCBInOGOwner" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="jCBInOGGroup" min="-2" max="-2" attributes="0"/>
@@ -749,7 +754,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                               <Component id="jCBInRepairProperty" min="-2" max="-2" attributes="0"/>
@@ -791,7 +796,7 @@
                                   <Component id="jTextInRepairRCost" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jTextInMDate" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="149" max="32767" attributes="0"/>
+                              <EmptySpace pref="135" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonRepairClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonRepairAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -971,7 +976,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Component id="jTextInStoreName" min="-2" max="-2" attributes="0"/>
@@ -983,7 +988,7 @@
                               <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Component id="jTextInStorePhone" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="267" max="32767" attributes="0"/>
+                              <EmptySpace pref="295" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonStoreClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonStoreAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1085,7 +1090,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                               <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                               <Component id="jTextInRCName" min="-2" max="-2" attributes="0"/>
@@ -1093,7 +1098,7 @@
                               <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                               <Component id="jTextInRCPhone" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="336" max="32767" attributes="0"/>
+                              <EmptySpace pref="357" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jButtonRCClear" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jButtonRCAdd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1300,11 +1305,11 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="jTextInPropertyAddress" min="-2" pref="26" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jTextInPropertyAddress" min="-2" pref="37" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                       <Component id="jTextInPropertyCity" min="-2" max="-2" attributes="0"/>

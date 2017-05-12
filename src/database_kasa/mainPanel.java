@@ -32,7 +32,7 @@ public class mainPanel extends javax.swing.JFrame {
         try {
             UIManager.getLookAndFeelDefaults().put("defaultFont", new Font("Arial", Font.PLAIN, 16));
             
-            
+            //Connects to SQL database
             String driver="com.mysql.jdbc.Driver";
             String url= "jdbc:mysql://triton.towson.edu:3360/aalmal5db";
             String username ="aalmal5";
@@ -57,7 +57,8 @@ public class mainPanel extends javax.swing.JFrame {
         
     }
   private void updateCB(){
-try{           
+      //Updates the comboboxes
+            try{           
             
 			Statement stmt = conn.createStatement();
             String query = "SELECT * FROM Owner";
@@ -77,7 +78,7 @@ try{
             for(int i = 0; i<namesCB1.size(); i++){
             ownerCB[i] = namesCB1.get(i);
             }
-                 }catch(Exception ex){	System.out.println(ex);
+                 }catch(SQLException ex){	System.out.println(ex);
   	        }
 		
 		
@@ -137,9 +138,6 @@ try{
 	
 	
 	/////////////
-        
-        
-        
         
 ///////// Repair ///////
 		
@@ -314,8 +312,9 @@ try{
             }catch(Exception ex){	System.out.println(ex);
 	        }
         
-        
+
         ////////
+ 
     }
 
     /**
@@ -337,6 +336,7 @@ try{
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jPanelMain = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPaneInput = new javax.swing.JTabbedPane();
@@ -627,6 +627,8 @@ try{
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        jButton1.setText("jButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Name");
@@ -745,11 +747,11 @@ try{
         jPanelInOwnerGroupLayout.setVerticalGroup(
             jPanelInOwnerGroupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInOwnerGroupLayout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel4)
                 .addGap(0, 0, 0)
                 .addComponent(jCBInOGOwner, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(70, 70, 70)
                 .addComponent(jLabel5)
                 .addGap(0, 0, 0)
                 .addComponent(jCBInOGGroup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -965,7 +967,7 @@ try{
         jPanelInRepairLayout.setVerticalGroup(
             jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInRepairLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(30, 30, 30)
                 .addComponent(jLabel32)
                 .addGap(2, 2, 2)
                 .addComponent(jCBInRepairProperty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1000,7 +1002,7 @@ try{
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextInRepairRCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextInMDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRepairClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRepairAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1066,7 +1068,7 @@ try{
         jPanelInStoresLayout.setVerticalGroup(
             jPanelInStoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInStoresLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel29)
                 .addGap(1, 1, 1)
                 .addComponent(jTextInStoreName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1078,7 +1080,7 @@ try{
                 .addComponent(jLabel31)
                 .addGap(1, 1, 1)
                 .addComponent(jTextInStorePhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 295, Short.MAX_VALUE)
                 .addGroup(jPanelInStoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonStoreClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonStoreAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1133,7 +1135,7 @@ try{
         jPanelInRepairCompanyLayout.setVerticalGroup(
             jPanelInRepairCompanyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInRepairCompanyLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(38, 38, 38)
                 .addComponent(jLabel27)
                 .addGap(1, 1, 1)
                 .addComponent(jTextInRCName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1141,7 +1143,7 @@ try{
                 .addComponent(jLabel28)
                 .addGap(0, 0, 0)
                 .addComponent(jTextInRCPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 336, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 357, Short.MAX_VALUE)
                 .addGroup(jPanelInRepairCompanyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonRCClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRCAdd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1276,11 +1278,11 @@ try{
         jPanelInPropLayout.setVerticalGroup(
             jPanelInPropLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInPropLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(23, 23, 23)
                 .addComponent(jLabel8)
-                .addGap(0, 0, 0)
-                .addComponent(jTextInPropertyAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextInPropertyAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addGap(0, 0, 0)
                 .addComponent(jTextInPropertyCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2002,6 +2004,7 @@ try{
         String county = jCBInPropertyCounty.getSelectedItem().toString();
         int bedNum = jCBInPropertyBed.getSelectedIndex();
         int bathNum = jCBInPropertyBath.getSelectedIndex();
+        
         //Inserts data into property table
         String query = "INSERT into Property VALUES(\"" + propName + "\", \"" + propCity
                 +"\", \"" + propZip+ "\", " + ownerID +", " + size + ", " + year
@@ -2017,6 +2020,7 @@ try{
         String var1 = jTextInPropertyVar1.getText();
         String var2 = jTextInPropertyVar2.getText();
         String var3 = jTextInPropertyVar3.getText();
+        
         //Inserts data into condo , townhouse, single family tables
         if (type ==0){
             query = "INSERT into Condo VALUES(\"" + propName + "\", \"" + var1 + "\");";
@@ -2042,6 +2046,7 @@ try{
         String var4 = jTextInPropertyVar4.getText();
         String var5 = jTextInPropertyVar5.getText();
         String var6 = jTextInPropertyVar6.getText();
+        
         //Inserts data into rental or sale
         if (rS == 0){
             query = "INSERT into Rental VALUES(\"" + propName + "\", \"" + var4
@@ -2058,7 +2063,7 @@ try{
             stmt.execute(query); 
                  }catch(Exception ex){	System.out.println(ex);
      	        }
-        
+
     }//GEN-LAST:event_jButtonPropAddActionPerformed
 
     private void jButtonStoreAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStoreAddActionPerformed
@@ -2103,7 +2108,7 @@ try{
             stmt.execute(query); 
             updateCB();
             jButtonPayClearActionPerformed(null);
-                 }catch(Exception ex){	System.out.println(ex);
+                 }catch(SQLException ex){	System.out.println(ex);
      	        }
     }//GEN-LAST:event_jButtonPayAddActionPerformed
 
@@ -2166,10 +2171,11 @@ try{
             updateCB();
             new AddSuccess().setVisible(true);
             jButtonOwnerClearActionPerformed(null); 
-                 }catch(Exception ex){	System.out.println(ex);
+                 }catch(SQLException ex){	System.out.println(ex);
      	        }
         
         System.out.println(query);
+
         
     }//GEN-LAST:event_jButtonOwnerAddActionPerformed
 
@@ -2205,7 +2211,7 @@ try{
             updateCB();
             jButtonRCClearActionPerformed(null);
             new AddSuccess().setVisible(true);
-                 }catch(Exception ex){	System.out.println(ex);
+                 }catch(SQLException ex){	System.out.println(ex);
      	        }
        
 
@@ -2447,7 +2453,8 @@ try{
             }
             jTAOutOwnerInfo.setText(name + " email:" + email + " phone:" + phone);
 
-        }catch(Exception ex){	System.out.println(ex);
+        }catch(SQLException ex){	
+            System.out.println(ex);
         }
         query = "Select * from Ownergroup g, Owner o where g.groupID = " +ownerId+" And g.ownerID = o.ownerID;";
         name ="";
@@ -2659,6 +2666,7 @@ try{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonClear;
     private javax.swing.JButton jButtonOGAdd;
     private javax.swing.JButton jButtonOutOwner;
